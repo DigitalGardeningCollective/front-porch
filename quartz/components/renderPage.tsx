@@ -8,6 +8,8 @@ import { visit } from "unist-util-visit"
 import { Root, Element, ElementContent } from "hast"
 import { GlobalConfiguration } from "../cfg"
 import { i18n } from "../i18n"
+import Landing from "./Landing"
+import Garden from "./Garden"
 
 interface RenderComponents {
   head: QuartzComponent
@@ -210,32 +212,40 @@ export function renderPage(
   )
 
   const lang = componentData.frontmatter?.lang ?? cfg.locale?.split("-")[0] ?? "en"
+  const LandingComponent = Landing()
+  const GardenComponent = Garden()
+
+  console.log("slug -", slug);
+
+  // console.log('header -', header);
+
   const doc = (
     <html lang={lang}>
       <Head {...componentData} />
       <body data-slug={slug}>
-        <div id="quartz-root" class="page">
-          <Body {...componentData}>
-            {LeftComponent}
-            <div class="center">
-              <div class="page-header">
-                <Header {...componentData}>
-                  {header.map((HeaderComponent) => (
-                    <HeaderComponent {...componentData} />
-                  ))}
-                </Header>
-                <div class="popover-hint">
-                  {beforeBody.map((BodyComponent) => (
-                    <BodyComponent {...componentData} />
-                  ))}
-                </div>
+          <Header {...componentData}>
+            {header.map((HeaderComponent) => (
+              <HeaderComponent {...componentData} />
+            ))}
+          </Header>
+          <div id="quartz-root" class="page">
+            <Body {...componentData}>
+              {LeftComponent}
+              <div class="center">
+                { slug !== "index" && slug !== "garden/index" && (<div class="popover-hint">
+                    {beforeBody.map((BodyComponent) => (
+                      <BodyComponent {...componentData} />
+                    ))}
+                  </div>
+                )}
+                { slug === "index" && <LandingComponent {...componentData} /> }
+                { slug === "garden/index" && <GardenComponent {...componentData} /> }
+                { (slug !== "index" && slug !== "garden/index") && <Content {...componentData} /> }
               </div>
-              <Content {...componentData} />
-            </div>
-            {RightComponent}
-          </Body>
-          <Footer {...componentData} />
-        </div>
+              { slug !== "index" ? RightComponent : <div></div> }
+            </Body>
+            <Footer {...componentData} />
+          </div>
       </body>
       {pageResources.js
         .filter((resource) => resource.loadTime === "afterDOMReady")

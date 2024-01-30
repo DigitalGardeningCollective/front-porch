@@ -201,12 +201,12 @@ Additionally, like what is shown in the example above, you can import packages i
 After creating your custom component, re-export it in `quartz/components/index.ts`:
 
 ```ts title="quartz/components/index.ts" {4,10}
-import ArticleTitle from "./ArticleTitle"
+import Title from "./Title"
 import Content from "./pages/Content"
 import Darkmode from "./Darkmode"
 import YourComponent from "./YourComponent"
 
-export { ArticleTitle, Content, Darkmode, YourComponent }
+export { Title, Content, Darkmode, YourComponent }
 ```
 
 Then, you can use it like any other component in `quartz.layout.ts` via `Component.YourComponent()`. See the [[configuration#Layout|layout]] section for more details.

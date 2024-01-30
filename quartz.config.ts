@@ -8,9 +8,51 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "🪴 Quartz 4.0",
+    // Add your data here
+    landingPageData: {
+      authorName: "Jane Doe",
+      authorImageUrl: "default-author-image.jpeg",
+      intro: {
+        title: "Welcome!",
+        firstLeadUp: "I'm",
+        secondLeadUp: "and I'm a",
+        whatIDo: ["Profession 1", "Hobbyist 1", "Digital Gardener"],
+      },
+      showcaseItems: [
+        {
+          imageUrl: "default-landing-item-image.jpg",
+          title: "Example Showcase Item",
+          description: "This is an example showcase item",
+          linkPathname: "example",
+        },
+        {
+          imageUrl: "default-landing-item-image.jpg",
+          title: "Example Showcase Item",
+          description: "This is an example showcase item",
+          linkPathname: "example",
+        }
+      ],
+    },
+    gardenPageData: {
+      title: "Welcome to my Digital Garden!",
+      whatIWriteAbout: {
+        leadUp: "I mainly publish notes and essays about",
+        topics: ["topic 1", "topic 2", "topic 3"],
+      },
+      findMeOnCopy: "You can find me on these platforms:",
+      gardenAuthorImageUrl: "default-author-image.jpeg",
+      socialLinks: {
+        twitter: "https://twitter.com/janedoe",
+        facebook: "https://facebook.com/janedoe",
+        github: "https://github.com/janedoe",
+        linkedin: null,
+      },
+    },
+    enableFooter: false,
+    // Only edit if you know what you are doing
+    pageTitle: "Front Porch",
     enableSPA: true,
-    enablePopovers: true,
+    enablePopovers: false, // Temporarily disabling until the content inside the popover is responsive
     analytics: {
       provider: "plausible",
     },
@@ -27,7 +69,7 @@ const config: QuartzConfig = {
       },
       colors: {
         lightMode: {
-          light: "#faf8f8",
+          light: "#ffffff",
           lightgray: "#e5e5e5",
           gray: "#b8b8b8",
           darkgray: "#4e4e4e",

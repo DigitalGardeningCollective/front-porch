@@ -46,7 +46,7 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
 
   ContentMetadata.css = `
   .content-meta {
-    margin-top: 0;
+    margin: .5rem 0 0 0;
     color: var(--gray);
   }
   `

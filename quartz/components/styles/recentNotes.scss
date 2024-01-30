@@ -1,12 +1,18 @@
 .recent-notes {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+
   & > h3 {
-    margin: 0.5rem 0 0 0;
+    margin: 1rem 0 0 0;
     font-size: 1rem;
   }
 
   & > ul.recent-ul {
     list-style: none;
-    margin-top: 1rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
     padding-left: 0;
 
     & > li {

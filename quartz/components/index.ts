@@ -2,7 +2,7 @@ import Content from "./pages/Content"
 import TagContent from "./pages/TagContent"
 import FolderContent from "./pages/FolderContent"
 import NotFound from "./pages/404"
-import ArticleTitle from "./ArticleTitle"
+import Title from "./Title"
 import Darkmode from "./Darkmode"
 import Head from "./Head"
 import PageTitle from "./PageTitle"
@@ -19,9 +19,27 @@ import DesktopOnly from "./DesktopOnly"
 import MobileOnly from "./MobileOnly"
 import RecentNotes from "./RecentNotes"
 import Breadcrumbs from "./Breadcrumbs"
+import Navbar from "./Navbar"
+import Landing from "./Landing"
+import ShowcaseItem from "./ShowcaseItem"
+import Garden from "./Garden"
+import Card from "./Card"
+import Subtitle from "./Subtitle"
+import Contributions from "./Contributions"
+import GrowthStage from "./GrowthStage"
+import Team from "./Team"
+import ToolsOrTech from "./ToolsOrTech"
+import Role from "./Role"
+import Duration from "./Duration"
+import Row from "./Row"
+import Grid from "./Grid"
+import Divider from "./Divider"
+import Author from "./Author"
+import CultivationDates from "./CultivationDates"
+import RSS from "./RSS"
 
 export {
-  ArticleTitle,
+  Title,
   Content,
   TagContent,
   FolderContent,
@@ -42,4 +60,22 @@ export {
   RecentNotes,
   NotFound,
   Breadcrumbs,
+  Navbar,
+  Landing,
+  ShowcaseItem,
+  Garden,
+  Card,
+  Subtitle,
+  Contributions,
+  GrowthStage,
+  Team,
+  Duration,
+  ToolsOrTech,
+  Role,
+  Row,
+  Grid,
+  Divider,
+  Author,
+  CultivationDates,
+  RSS
 }

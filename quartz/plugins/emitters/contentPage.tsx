@@ -6,11 +6,29 @@ import { QuartzEmitterPlugin } from "../types"
 import { QuartzComponentProps } from "../../components/types"
 import HeaderConstructor from "../../components/Header"
 import BodyConstructor from "../../components/Body"
+import LandingConstructor from "../../components/Landing"
+import ShowcaseItemConstructor from "../../components/ShowcaseItem"
+import GardenConstructor from "../../components/Garden"
+import CardConstructor from "../../components/Card"
+import RecentlyPublishedConstructor from "../../components/RecentNotes"
+import GrowthStageConstructor from "../../components/GrowthStage"
+import TeamConstructor from "../../components/Team"
+import RoleConstructor from "../../components/Role"
+import DurationConstructor from "../../components/Duration"
+import ToolsOrTechConstructor from "../../components/ToolsOrTech"
+import RowConstructor from "../../components/Row"
+import GridConstructor from "../../components/Grid"
+import AuthorConstructor from "../../components/Author"
+import CultivationDatesConstructor from "../../components/CultivationDates"
+import DividerConstructor from "../../components/Divider"
+import SearchConstructor from "../../components/Search"
+import DarkModeConstructor from "../../components/Darkmode"
+import RSSConstructor from "../../components/RSS"
 import { pageResources, renderPage } from "../../components/renderPage"
 import { FullPageLayout } from "../../cfg"
 import { Argv } from "../../util/ctx"
 import { FilePath, isRelativeURL, joinSegments, pathToRoot } from "../../util/path"
-import { defaultContentPageLayout, sharedPageComponents } from "../../../quartz.layout"
+import { defaultContentPageLayout, sharedPageComponents, noteOrEssayPageLayout, portfolioItemPageLayout } from "../../../quartz.layout"
 import { Content } from "../../components"
 import chalk from "chalk"
 import { write } from "./helpers"
@@ -52,7 +70,7 @@ const parseDependencies = (argv: Argv, hast: Root, file: VFile): string[] => {
 }
 
 export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOpts) => {
-  const opts: FullPageLayout = {
+  let opts: FullPageLayout = {
     ...sharedPageComponents,
     ...defaultContentPageLayout,
     pageBody: Content(),
@@ -62,11 +80,36 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
   const { head: Head, header, beforeBody, pageBody, left, right, footer: Footer } = opts
   const Header = HeaderConstructor()
   const Body = BodyConstructor()
+  const Landing = LandingConstructor()
+  const ShowcaseItem = ShowcaseItemConstructor()
+  const Garden = GardenConstructor()
+  const Card = CardConstructor()
+  const RecentlyPublished = RecentlyPublishedConstructor()
+  const GrowthStage = GrowthStageConstructor()
+  const Team = TeamConstructor()
+  const Role = RoleConstructor()
+  const Duration = DurationConstructor()
+  const ToolsOrTech = ToolsOrTechConstructor()
+  const Row = RowConstructor()
+  const Author = AuthorConstructor()
+  const CultivationDates = CultivationDatesConstructor()
+  const Grid = GridConstructor()
+  const Divider = DividerConstructor()
+  const Search = SearchConstructor()
+  const DarkMode = DarkModeConstructor()
+  const RSS = RSSConstructor()
 
   return {
     name: "ContentPage",
     getQuartzComponents() {
-      return [Head, Header, Body, ...header, ...beforeBody, pageBody, ...left, ...right, Footer]
+      return [
+          Head, Header, Body, ...header, ...beforeBody, pageBody, ...left, ...right, Footer, 
+          Landing, ShowcaseItem,
+          Garden, Card, RecentlyPublished,
+          GrowthStage, Row, Author, CultivationDates,
+          Team, ToolsOrTech, Role, Duration, Grid, Divider,
+          Search, DarkMode, RSS
+        ]
     },
     async getDependencyGraph(ctx, content, _resources) {
       const graph = new DepGraph<FilePath>()
@@ -106,7 +149,15 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
           allFiles,
         }
 
-        const content = renderPage(cfg, slug, componentData, opts, externalResources)
+        let newOpts = null
+        if (slug.includes("/essays/") || slug.includes("/notes/")) {
+          newOpts = { ...opts, ...noteOrEssayPageLayout }
+        } else if (slug.includes("portfolio/")) {
+          newOpts = { ...opts, ...portfolioItemPageLayout }
+        }
+
+        const content = renderPage(cfg, slug, componentData, newOpts ?? opts, externalResources)
+
         const fp = await write({
           ctx,
           content,

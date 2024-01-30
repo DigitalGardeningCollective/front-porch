@@ -35,6 +35,10 @@ export function googleFontHref(theme: Theme) {
   return `https://fonts.googleapis.com/css2?family=${code}&family=${header}:wght@400;700&family=${body}:ital,wght@0,400;0,600;1,400;1,600&display=swap`
 }
 
+export function fontAwesomeScript() { // TODO: Change this so it uses the DGC's account
+  return "https://kit.fontawesome.com/685579ec92.js"
+}
+
 export function joinStyles(theme: Theme, ...stylesheet: string[]) {
   return `
 ${stylesheet.join("\n\n")}
@@ -54,7 +58,7 @@ ${stylesheet.join("\n\n")}
   --codeFont: "${theme.typography.code}", ${DEFAULT_MONO};
 }
 
-:root[saved-theme="dark"] {
+:root[saved-theme="light"] {
   --light: ${theme.colors.darkMode.light};
   --lightgray: ${theme.colors.darkMode.lightgray};
   --gray: ${theme.colors.darkMode.gray};

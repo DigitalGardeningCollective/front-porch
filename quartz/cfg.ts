@@ -20,7 +20,47 @@ export type Analytics =
       host?: string
     }
 
+export type ShowcaseItem = {
+  imageUrl: string
+  title: string
+  description: string
+  linkPathname: string
+}
+
+export type LandingPageData = {
+  authorName: string
+  authorImageUrl: string
+  intro: {
+    title: string
+    firstLeadUp: string
+    secondLeadUp: string
+    whatIDo: string[]
+  }
+  showcaseItems: ShowcaseItem[]
+}
+
+export type GardenPageData = {
+  title: string
+  whatIWriteAbout: {
+    leadUp: string
+    topics: string[]
+  }
+  findMeOnCopy: string
+  gardenAuthorImageUrl: string
+  socialLinks: {
+    twitter: string | null
+    facebook: string | null
+    github: string | null
+    linkedin: string | null
+  }
+}
+
 export interface GlobalConfiguration {
+  //** Author Data Config
+  landingPageData: LandingPageData
+  gardenPageData: GardenPageData
+  enableFooter: boolean
+  // ** Page Title */
   pageTitle: string
   /** Whether to enable single-page-app style rendering. this prevents flashes of unstyled content and improves smoothness of Quartz */
   enableSPA: boolean
@@ -46,6 +86,8 @@ export interface GlobalConfiguration {
    * Region Codes: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
    */
   locale: ValidLocale
+  websiteMenuTitles: string[]
+  gardenMenuTitles: string[]
 }
 
 export interface QuartzConfig {

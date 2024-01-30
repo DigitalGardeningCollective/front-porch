@@ -10,7 +10,7 @@ import popoverStyle from "../../components/styles/popover.scss"
 import { BuildCtx } from "../../util/ctx"
 import { StaticResources } from "../../util/resources"
 import { QuartzComponent } from "../../components/types"
-import { googleFontHref, joinStyles } from "../../util/theme"
+import { googleFontHref, joinStyles, fontAwesomeScript } from "../../util/theme"
 import { Features, transform } from "lightningcss"
 import { transform as transpile } from "esbuild"
 import { write } from "./helpers"
@@ -246,6 +246,21 @@ export const ComponentResources: QuartzEmitterPlugin<Options> = (opts?: Partial<
       // important that this goes *after* component scripts
       // as the "nav" event gets triggered here and we should make sure
       // that everyone else had the chance to register a listener for it
+
+      if (fontOrigin === "googleFonts") {
+        resources.css.push(googleFontHref(ctx.cfg.configuration.theme))
+      } else if (fontOrigin === "local") {
+        // let the user do it themselves in css
+      }
+
+      resources.js.push(
+        {
+          src: fontAwesomeScript(),
+          contentType: "external",
+          loadTime: "beforeDOMReady",
+        },
+      )
+
       addGlobalPageResources(ctx, resources, componentResources)
 
       const stylesheet = joinStyles(
