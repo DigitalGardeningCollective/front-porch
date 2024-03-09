@@ -86,8 +86,6 @@ export interface GlobalConfiguration {
    * Region Codes: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
    */
   locale: ValidLocale
-  websiteMenuTitles: string[]
-  gardenMenuTitles: string[]
 }
 
 export interface QuartzConfig {
