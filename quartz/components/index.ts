@@ -37,6 +37,7 @@ import Divider from "./Divider"
 import Author from "./Author"
 import CultivationDates from "./CultivationDates"
 import RSS from "./RSS"
+import SocialIcons from "./SocialIcons"
 
 export {
   Title,
@@ -77,5 +78,6 @@ export {
   Divider,
   Author,
   CultivationDates,
-  RSS
+  RSS,
+  SocialIcons
 }

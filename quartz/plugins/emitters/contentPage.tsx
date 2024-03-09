@@ -24,6 +24,7 @@ import DividerConstructor from "../../components/Divider"
 import SearchConstructor from "../../components/Search"
 import DarkModeConstructor from "../../components/Darkmode"
 import RSSConstructor from "../../components/RSS"
+import SocialIconsConstructor from "../../components/SocialIcons"
 import { pageResources, renderPage } from "../../components/renderPage"
 import { FullPageLayout } from "../../cfg"
 import { Argv } from "../../util/ctx"
@@ -98,6 +99,7 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
   const Search = SearchConstructor()
   const DarkMode = DarkModeConstructor()
   const RSS = RSSConstructor()
+  const SocialIcons = SocialIconsConstructor()
 
   return {
     name: "ContentPage",
@@ -108,7 +110,7 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
           Garden, Card, RecentlyPublished,
           GrowthStage, Row, Author, CultivationDates,
           Team, ToolsOrTech, Role, Duration, Grid, Divider,
-          Search, DarkMode, RSS
+          Search, DarkMode, RSS, SocialIcons
         ]
     },
     async getDependencyGraph(ctx, content, _resources) {
