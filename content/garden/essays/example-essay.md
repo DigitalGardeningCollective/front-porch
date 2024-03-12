@@ -2,6 +2,7 @@
 tags:
   - obsidian
   - productivity
+  - example
 title: How you can use Obsidian to do X, Y, and Z
 growthStage: evergreen
 subtitle: Task, Habits, Notes, Reviews, and etc
