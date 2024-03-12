@@ -10,16 +10,21 @@ function CultivationDates({ fileData, displayClass, cfg }: QuartzComponentProps)
         const formatter = new Intl.RelativeTimeFormat(locale ?? "en-US", { numeric: "auto" });
         return formatter.format(-diffInDays, "day");
     }
-    
+
+    console.log('fileData.dates', fileData.dates);
+
     const publishedDate = daysAgoFormat(getDate(cfg, fileData)!, cfg.locale);
-    const updatedDate = fileData.dates?.modified
+    const updatedDate = fileData.dates?.modified;
+
+    console.log('publishedDate', publishedDate);
+    console.log('updatedDate', updatedDate);
     
     if (publishedDate ) {
         return (
             <div class={classNames(displayClass, "cultivation-dates")}>
                 <p><span>Published:</span> {publishedDate}</p>
                 {  updatedDate && 
-                    <p><span>Last Tended:</span> {daysAgoFormat(updatedDate)}</p>
+                    <p><span>Last Tended:</span> {daysAgoFormat(updatedDate, cfg.locale)}</p>
                 }
             </div>
         )
