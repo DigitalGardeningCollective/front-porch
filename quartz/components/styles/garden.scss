@@ -18,7 +18,7 @@
     border: 1px solid var(--gray);
     border-radius: 5px;
     padding-left: 1rem;
-    
+
     img {
         width: 150px;
         height: 150px;
@@ -69,6 +69,10 @@
 #garden-info {
     margin-left: 15px;
     
+    h4 {
+        margin-top: 0;
+    }
+
     h4, p {
         color: var(--dark)
     }
@@ -76,15 +80,4 @@
     p span {
         font-weight: bold;
     }
-
-    ul {
-        padding: 0;
-        display: flex;
-        flex-direction: row;
-
-        .garden-social-item {
-            list-style-type: none;
-            margin-right: .5rem;
-         }
-    }    
 }

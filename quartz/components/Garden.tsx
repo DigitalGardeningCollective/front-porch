@@ -1,6 +1,5 @@
 import gardenStyle from "./styles/garden.scss"
 import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
-import { sharedPageComponents } from "../../quartz.layout"
 import * as Component from "../components"
 import { defaultOptions } from "./Graph"
 
@@ -35,6 +34,13 @@ export default (() => {
             gardenAuthorImageUrl,
             socialLinks: { twitter, facebook, github, linkedin },
          } = gardenPageData;
+
+         const SocialIconsComponent = Component.SocialIcons({ 
+            twitter,
+            facebook,
+            github,
+            linkedin
+        });
 
          const collections = [
              {
@@ -71,12 +77,7 @@ export default (() => {
                         <h4>{ title }</h4>
                         <p>{ leadUp } <span>{ topics.slice(0, topics.length - 1).join(', ') }</span>, and <span>{ topics[topics.length - 1] }</span>.</p>
                         <p>{ findMeOnCopy }</p>
-                        <ul>
-                            { twitter && <li class="garden-social-item"><a href={twitter}><i class="fa-brands fa-x-twitter"></i></a></li> }
-                            { facebook && <li class="garden-social-item"><a href={facebook}><i class="fa-brands fa-facebook"></i></a></li> }
-                            { github && <li class="garden-social-item"><a href={github}><i class="fa-brands fa-github"></i></a></li> }
-                            { linkedin && <li class="garden-social-item"><a href={linkedin}><i class="fa-brands fa-linkedin"></i></a></li> }
-                        </ul>
+                        <SocialIconsComponent { ...data } />
                     </div>
                 </div>
                 <div id="garden-body">

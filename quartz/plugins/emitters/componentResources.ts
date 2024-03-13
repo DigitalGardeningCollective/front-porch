@@ -10,7 +10,7 @@ import popoverStyle from "../../components/styles/popover.scss"
 import { BuildCtx } from "../../util/ctx"
 import { StaticResources } from "../../util/resources"
 import { QuartzComponent } from "../../components/types"
-import { googleFontHref, joinStyles, fontAwesomeScript } from "../../util/theme"
+import { googleFontHref, joinStyles } from "../../util/theme"
 import { Features, transform } from "lightningcss"
 import { transform as transpile } from "esbuild"
 import { write } from "./helpers"
@@ -252,14 +252,6 @@ export const ComponentResources: QuartzEmitterPlugin<Options> = (opts?: Partial<
       } else if (fontOrigin === "local") {
         // let the user do it themselves in css
       }
-
-      resources.js.push(
-        {
-          src: fontAwesomeScript(),
-          contentType: "external",
-          loadTime: "beforeDOMReady",
-        },
-      )
 
       addGlobalPageResources(ctx, resources, componentResources)
 

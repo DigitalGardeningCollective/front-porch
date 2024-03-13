@@ -56,6 +56,8 @@ export const CreatedModifiedDate: QuartzTransformerPlugin<Partial<Options> | und
                 modified ||= file.data.frontmatter["last-modified"] as MaybeDate
                 published ||= file.data.frontmatter.publishDate as MaybeDate
               } else if (source === "git") {
+                published ||= file.data.frontmatter?.date as MaybeDate
+                
                 if (!repo) {
                   // Get a reference to the main git repo.
                   // It's either the same as the workdir,
