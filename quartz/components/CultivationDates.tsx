@@ -11,6 +11,9 @@ function CultivationDates({ fileData, displayClass, cfg }: QuartzComponentProps)
         return formatter.format(-diffInDays, "day");
     }
 
+    const { githubUsername, gitHubFrontPorchRepoName } = cfg;
+    const { relativePath } = fileData;
+
     const updatedDateStr = daysAgoFormat(getDate(cfg, fileData)!, cfg.locale);
 
     const publishedDate = fileData.dates?.published;
@@ -25,7 +28,7 @@ function CultivationDates({ fileData, displayClass, cfg }: QuartzComponentProps)
         return (
             <div class={classNames(displayClass, "cultivation-dates")}>
                 <p><span>Published:</span> {publishedDateStr}</p>
-                <p><span>Last Tended:</span> {updatedDateStr}</p>
+                <p><span>Last Tended:</span> {updatedDateStr} (<a target="_blank" href={`https://github.com/${githubUsername}/${gitHubFrontPorchRepoName}/commits/main/content/${relativePath}`}>View History</a>)</p>
             </div>
         )
     } else {

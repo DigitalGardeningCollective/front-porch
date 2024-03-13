@@ -9,6 +9,8 @@ import * as Plugin from "./quartz/plugins"
 const config: QuartzConfig = {
   configuration: {
     // Add your data here
+    githubUsername: "DigitalGardeningCollective",
+    gitHubFrontPorchRepoName: "front-porch",
     landingPageData: {
       authorName: "Jane Doe",
       authorImageUrl: "default-author-image.jpeg",
