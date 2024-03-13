@@ -6,7 +6,7 @@ import { readFileSync } from "fs"
  */
 export const ORIGIN_NAME = "origin"
 export const UPSTREAM_NAME = "upstream"
-export const QUARTZ_SOURCE_BRANCH = "bug-fixes"
+export const QUARTZ_SOURCE_BRANCH = "develop"
 export const cwd = process.cwd()
 export const cacheDir = path.join(cwd, ".quartz-cache")
 export const cacheFile = "./quartz/.quartz-cache/transpiled-build.mjs"
