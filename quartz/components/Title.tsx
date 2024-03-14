@@ -12,7 +12,7 @@ function Title({ fileData, displayClass }: QuartzComponentProps) {
 }
 Title.css = `
 .title {
-  margin: .5rem 0 0 0;
+  margin: 0;
 }
 `
 
