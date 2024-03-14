@@ -17,7 +17,6 @@ export const noteOrEssayPageLayout: PageLayout = {
     Component.GrowthStage(),
     Component.Title(),
     Component.Subtitle(),
-    // Component.ContentMeta(),
     Component.TagList(),
     Component.Row({ 
       isSpacedBetween: true, 
@@ -71,7 +70,6 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Title(),
     Component.Subtitle(),
     Component.ContentMeta(),
-    Component.Contributions(),
     Component.TagList(),
   ],
   left: [

@@ -230,7 +230,7 @@ export function renderPage(
           </Header>
           <div id="quartz-root" class="page">
             <Body {...componentData}>
-              {LeftComponent}
+              { (slug !== "index" && slug !== "garden/index") ? LeftComponent : <div></div>}
               <div class="center">
                 { slug !== "index" && slug !== "garden/index" && (<div class="popover-hint">
                     {beforeBody.map((BodyComponent) => (
@@ -242,7 +242,7 @@ export function renderPage(
                 { slug === "garden/index" && <GardenComponent {...componentData} /> }
                 { (slug !== "index" && slug !== "garden/index") && <Content {...componentData} /> }
               </div>
-              { slug !== "index" ? RightComponent : <div></div> }
+              { (slug !== "index" && slug !== "garden/index") ? RightComponent : <div></div> }
             </Body>
             <Footer {...componentData} />
           </div>
