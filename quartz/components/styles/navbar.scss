@@ -116,7 +116,7 @@ nav.navbar {
 			transition: all 0.35s ease;
 
 			&:hover {
-				color: --var(secondary);
+				color: var(--secondary);
 			}
 		}
 
@@ -163,12 +163,12 @@ nav.navbar {
 			font-size: 1rem;
 			font-weight: 500;
 			line-height: inherit;
-			color: --var(dark);
+			color: var(--dark);
 			text-rendering: optimizeLegibility;
 			transition: all 0.35s ease;
 
 			&:hover {
-				color: --var(secondary);
+				color: var(--secondary);
 			}
 		}
 

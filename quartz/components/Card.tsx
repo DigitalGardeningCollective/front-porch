@@ -40,7 +40,7 @@ export default ((userOpts?: Options) => {
             border-bottom-right-radius: 0;
             display: flex;
             width: 100%;
-            height: 150px;
+            height: 130px;
             object-fit: cover;
             margin: 0;
         }
