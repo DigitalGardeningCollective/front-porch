@@ -19,10 +19,10 @@ export const noteOrEssayPageLayout: PageLayout = {
     Component.Subtitle(),
     Component.TagList(),
     Component.Row({ 
-      isSpacedBetween: true, 
+      hasSpacedBetweenJustification: true, 
       components: [
         Component.Row({ 
-          isSpacedBetween: false, 
+          hasSpacedBetweenJustification: false, 
           components: [
             Component.Author(),
             Component.Contributions()
@@ -62,6 +62,15 @@ export const portfolioItemPageLayout: PageLayout = {
     Component.DesktopOnly(Component.TableOfContents()),
   ],
 
+}
+
+export const aboutPageLayout: PageLayout = {
+  beforeBody: [
+    Component.Title({ useConfig: true }),
+    Component.Subtitle({ useConfig: true }),
+  ],
+  left: [],
+  right: [],
 }
 
 // components for pages that display a single page (e.g. a single note)

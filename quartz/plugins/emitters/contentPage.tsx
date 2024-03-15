@@ -26,11 +26,18 @@ import DarkModeConstructor from "../../components/Darkmode"
 import RSSConstructor from "../../components/RSS"
 import SocialIconsConstructor from "../../components/SocialIcons"
 import ContributionsConstructor from "../../components/Contributions"
+import AuthorImageConstructor from "../../components/AuthorImage"
 import { pageResources, renderPage } from "../../components/renderPage"
 import { FullPageLayout } from "../../cfg"
 import { Argv } from "../../util/ctx"
 import { FilePath, isRelativeURL, joinSegments, pathToRoot } from "../../util/path"
-import { defaultContentPageLayout, sharedPageComponents, noteOrEssayPageLayout, portfolioItemPageLayout } from "../../../quartz.layout"
+import { 
+  defaultContentPageLayout, 
+  sharedPageComponents, 
+  noteOrEssayPageLayout, 
+  portfolioItemPageLayout,
+  aboutPageLayout
+} from "../../../quartz.layout"
 import { Content } from "../../components"
 import chalk from "chalk"
 import { write } from "./helpers"
@@ -102,6 +109,7 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
   const RSS = RSSConstructor()
   const SocialIcons = SocialIconsConstructor()
   const Contributions = ContributionsConstructor()
+  const AuthorImage = AuthorImageConstructor()
 
   return {
     name: "ContentPage",
@@ -112,7 +120,8 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
           Garden, Card, RecentlyPublished,
           GrowthStage, Row, Author, CultivationDates, Contributions,
           Team, ToolsOrTech, Role, Duration, Grid, Divider,
-          Search, DarkMode, RSS, SocialIcons
+          Search, DarkMode, RSS, SocialIcons,
+          AuthorImage
         ]
     },
     async getDependencyGraph(ctx, content, _resources) {
@@ -158,6 +167,8 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
           newOpts = { ...opts, ...noteOrEssayPageLayout }
         } else if (slug.includes("portfolio/")) {
           newOpts = { ...opts, ...portfolioItemPageLayout }
+        } else if (slug.includes("about")) {
+          newOpts = { ...opts, ...aboutPageLayout }
         }
 
         const content = renderPage(cfg, slug, componentData, newOpts ?? opts, externalResources)

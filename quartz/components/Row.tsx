@@ -2,19 +2,26 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import { classNames } from "../util/lang"
 
 interface Options {
-  isSpacedBetween: boolean
   components: QuartzComponent[]
+  hasSpacedBetweenJustification: boolean
+  hasFlexStartAlignment?: boolean,
+  classes?: string[]
 }
 
 export default ((opts?: Options) => {
   function Row(componentData: QuartzComponentProps) {
     const { displayClass } = componentData;
-    const isSpacedBetween = opts?.isSpacedBetween ? opts.isSpacedBetween : false;
+    const hasSpacedBetweenJustification = opts?.hasSpacedBetweenJustification ? opts.hasSpacedBetweenJustification : false;
+    const hasFlexStartAlignment = opts?.hasFlexStartAlignment ? opts.hasFlexStartAlignment : false;
     const components = opts?.components;
+    const classes = opts?.classes ?? [];
 
     if (components) {
         return (
-            <div class={`row ${classNames(displayClass, isSpacedBetween ? "space-between" : "flex-start")}`}>
+            <div class={`row ${classes.join(" ")}
+                ${classNames(displayClass, hasSpacedBetweenJustification ? "justify-space-between" : "justify-flex-start")}
+                ${classNames(displayClass, hasFlexStartAlignment ? "align-flex-start" : "align-center")}
+                `}>
               { components.map((Component, i) => <Component {...componentData} key={i} />) }
             </div>
           ) 
@@ -25,17 +32,15 @@ export default ((opts?: Options) => {
 
   Row.css = `
     .row {
+        display: flex;
+        flex-direction: row;
         align-items: center;
         margin-top: .5rem;
     }
-    .flex-start {
-        display: flex;
-        flex-direction: row;
+    .justify-flex-start {
         justify-content: flex-start;
     }
-    .space-between {
-        display: flex;
-        
+    .justify-space-between {        
         @media only screen and (min-width: 768px) {
           flex-direction: row;
           justify-content: space-between;
@@ -47,6 +52,12 @@ export default ((opts?: Options) => {
           justify-content: flex-start;
           align-items: flex-start;
         }
+    }
+    .align-center {
+        align-items: center;
+    }
+    .align-flex-start {
+        align-items: flex-start;
     }
   `
   return Row

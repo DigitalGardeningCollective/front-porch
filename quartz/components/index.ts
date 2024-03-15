@@ -38,6 +38,7 @@ import Author from "./Author"
 import CultivationDates from "./CultivationDates"
 import RSS from "./RSS"
 import SocialIcons from "./SocialIcons"
+import AuthorImage from "./AuthorImage"
 
 export {
   Title,
@@ -79,5 +80,6 @@ export {
   Author,
   CultivationDates,
   RSS,
-  SocialIcons
+  SocialIcons,
+  AuthorImage
 }
