@@ -1,3 +1,4 @@
+import { classNames } from "../util/lang"
 import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
 
 interface Options {
@@ -10,16 +11,16 @@ interface Options {
 }
 
 export default ((userOpts?: Options) => {
-    function Card({ fileData, cfg, displayClass }: QuartzComponentProps) {
+    function Card({ displayClass }: QuartzComponentProps) {
         const { data } = {  ...userOpts }
 
         return (
-            <div class="card"> 
+            <div class={classNames(displayClass, "card")}> 
                 <image src={`../static/${data?.imageUrl}`} alt="Card Image" />
                 <div>
                     <h3>{ data?.title }</h3>
                     <p>{ data?.description }</p>
-                    <a href={`/${data?.link}`}>Browse -{'>'}</a>
+                    <a href={`/${data?.link}`}>Browse &rarr;</a>
                 </div>
             </div>
         )                
@@ -29,9 +30,8 @@ export default ((userOpts?: Options) => {
     .card {
         display: flex;
         flex-direction: column;
-        border: 1px solid #ccc;
+        border: 1px solid var(--gray);
         border-radius: 5px;
-        height: 300px;
         
         img {
             border-top-left-radius: 5px;
@@ -48,16 +48,19 @@ export default ((userOpts?: Options) => {
         div {
             display: flex;
             flex-direction: column;
-            flex: 3;
+            padding: 1rem;
 
             h3 {
-                margin-top: 1rem;
+                margin-top: 0rem;
                 margin-bottom: 0rem;
             }
 
-            h3, p, a {
-                margin-left: 1rem;
+            h3, p {
                 color: var(--dark);
+            }
+
+            a {
+                color: var(--secondary);
             }
         }
     }
