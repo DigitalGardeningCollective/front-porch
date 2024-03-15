@@ -19,10 +19,10 @@ export const noteOrEssayPageLayout: PageLayout = {
     Component.Subtitle(),
     Component.TagList(),
     Component.Row({ 
-      hasSpacedBetweenJustification: true, 
+      hasSpacedBetweenJustification: true,
       components: [
         Component.Row({ 
-          hasSpacedBetweenJustification: false, 
+          hasSpacedBetweenJustification: false,
           components: [
             Component.Author(),
             Component.Contributions()

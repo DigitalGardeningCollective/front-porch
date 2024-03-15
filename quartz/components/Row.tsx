@@ -54,7 +54,12 @@ export default ((opts?: Options) => {
         }
     }
     .align-center {
+      @media only screen and (min-width: 768px) {
         align-items: center;
+      }
+      @media only screen and (max-width: 767px) {
+        align-items: flex-start;
+      }
     }
     .align-flex-start {
         align-items: flex-start;
