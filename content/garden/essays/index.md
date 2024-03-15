@@ -1,4 +1,4 @@
 ---
 title: Essays
-subtitle: Long-form narratives and opinion pieces
+description: Long-form narratives and opinion pieces
 ---

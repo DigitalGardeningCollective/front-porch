@@ -1,4 +1,4 @@
 ---
 title: Notes
-subtitle: Atomic notes, i.e. single ideas
+description: Atomic notes, i.e. single ideas
 ---

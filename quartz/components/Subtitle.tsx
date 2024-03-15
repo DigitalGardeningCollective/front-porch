@@ -14,7 +14,7 @@ export default ((opts?: Options) => {
     if (options && options.useConfig) {
       subtitle = getWhatIDoStr(cfg.landingPageData.intro.whatIDo);
     } else {
-      subtitle = fileData.frontmatter?.subtitle;
+      subtitle = fileData.frontmatter?.description;
     }
     
     if (subtitle) {

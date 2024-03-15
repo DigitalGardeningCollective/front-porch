@@ -228,7 +228,7 @@ export function renderPage(
     }
   )
 
-  console.log("slug -", slug);
+  // console.log("slug -", slug);
 
   // console.log('header -', header);
 

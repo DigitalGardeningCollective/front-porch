@@ -1,6 +1,6 @@
 ---
 title: Example Portfolio Entry
-subtitle: Example Subtitle
+description: Example Subtitle
 team:
   - Jane Doe
   - John Smith

@@ -1,5 +1,5 @@
 ---
 title: Contributions
-subtitle: My contributions to pieces authored by others
+description: My contributions to pieces authored by others
 tags:
 ---
