@@ -8,6 +8,11 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
+    /**
+     * Front Porch 1.0 Configuration
+     *
+     * See https://github.com/DigitalGardeningCollective/front-porch/blob/main/README.md for more information.
+     */
     // Add your data here
     githubUsername: "DigitalGardeningCollective",
     gitHubFrontPorchRepoName: "front-porch",
@@ -25,13 +30,14 @@ const config: QuartzConfig = {
           imageUrl: "default-landing-item-image.jpg",
           title: "Example Showcase Item",
           description: "This is an example showcase item",
-          linkPathname: "example",
+          pathnameOrUrl: "portfolio",
         },
         {
           imageUrl: "default-landing-item-image.jpg",
-          title: "Example Showcase Item",
-          description: "This is an example showcase item",
-          linkPathname: "example",
+          title: "External Showcase Item",
+          description: "This is an example showcase item with an external link",
+          pathnameOrUrl: "https://digitalgardeningcollective.com",
+          hasExternalLink: true,
         }
       ],
     },

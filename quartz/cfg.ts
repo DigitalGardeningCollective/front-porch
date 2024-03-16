@@ -24,7 +24,8 @@ export type ShowcaseItem = {
   imageUrl: string
   title: string
   description: string
-  linkPathname: string
+  pathnameOrUrl: string
+  hasExternalLink?: boolean
 }
 
 export type LandingPageData = {
