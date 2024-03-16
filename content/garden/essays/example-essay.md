@@ -4,13 +4,13 @@ tags:
   - productivity
   - example
 title: How you can use Obsidian to do X, Y, and Z
-growthStage: evergreen
+growth-stage: evergreen
 description: Task, Habits, Notes, Reviews, and etc
-openToContributions: true
+open-to-contributions: true
 contributors:
   - Ashley
   - Ben
-contributorLinks:
+contributor-links:
   - https://github.com/ashleycrouch
   - https://github.com/bencovington-game
 date: 2024-03-06 8:30 pm

@@ -4,9 +4,9 @@ import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
 export default (() => {
     function Contributions({ fileData, cfg }: QuartzComponentProps) {        
         const { githubUsername, gitHubFrontPorchRepoName } = cfg;
-        const openToContributions = fileData.frontmatter?.openToContributions;
+        const openToContributions = fileData.frontmatter?.["open-to-contributions"];
         const contributors = fileData.frontmatter?.contributors;
-        const contributorLinks = fileData.frontmatter?.contributorLinks;
+        const contributorLinks = fileData.frontmatter?.["contributor-links"];
         if (openToContributions && typeof openToContributions == "boolean") {
             return (
                 <div id="contributions-div">
