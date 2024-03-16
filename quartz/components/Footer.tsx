@@ -18,11 +18,11 @@ export default ((opts?: Options) => {
         <hr />
         { !isFooterEnabled &&
           <div>
-            <p>{i18n(cfg.locale).components.footer.createdWith}{" "} the <a href="https://www.digitalgardeningcollective.com">Digital Gardening Collective</a>'s <a href="https://github.com/DigitalGardeningCollective/front-porch">front-porch</a> fork of <a href={"https://quartz.jzhao.xyz/"}>Quartz v{version}</a>, © {year}</p>
+            <p>{i18n(cfg.locale).components.footer.createdWith}{" "} the <a target="_blank" href="https://www.digitalgardeningcollective.com">Digital Gardening Collective</a>'s <a target="_blank" href="https://github.com/DigitalGardeningCollective/front-porch">front-porch</a> fork of <a target="_blank" href={"https://quartz.jzhao.xyz/"}>Quartz v{version}</a>, © {year}</p>
             <ul>
               {Object.entries(links).map(([text, link]) => (
                 <li>
-                  <a href={link}>{text}</a>
+                  <a target="_blank" href={link}>{text}</a>
                 </li>
               ))}
             </ul>
@@ -31,7 +31,7 @@ export default ((opts?: Options) => {
         { isFooterEnabled && 
             <div>
               <p>{ authorName } © {year}</p>
-              <p id="powered-by">Powered by <a href={"https://github.com/DigitalGardeningCollective/front-porch"}>front-porch</a> and <a href={"https://quartz.jzhao.xyz/"}>Quartz</a></p>
+              <p id="powered-by">Powered by <a target="_blank" href={"https://github.com/DigitalGardeningCollective/front-porch"}>front-porch</a> and <a target="_blank" href={"https://quartz.jzhao.xyz/"}>Quartz</a></p>
             </div>
         }
       </footer>
