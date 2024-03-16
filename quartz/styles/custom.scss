@@ -26,6 +26,25 @@
     @media only screen and (max-width: 767) {
         flex-direction: column;
 
+        .showcase-img {
+            flex: 1;
+            box-sizing: border-box;
+            width: 100%;
+            margin-bottom: 0;
+        }
+
+        .showcase-info {
+            padding: 1rem;
+
+            h3, a {
+                margin: 0;
+            }
+
+            p {
+                margin: 1rem 0;
+            }
+        }
+
         #contributions-div {
             margin-top: 1rem;
             width: 100%;

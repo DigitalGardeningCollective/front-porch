@@ -14,9 +14,9 @@ export default ((userOpts?: Options) => {
         }
 
         return (
-            <div class="showcase-item"> 
-                <image src={`static/${getValueAfterCheck(showcaseItem?.imageUrl, "Image")}`} alt="Landing Page Showcase Image" />
-                <div>
+            <div class="showcase-item responsive"> 
+                <image class="showcase-img" src={`static/${getValueAfterCheck(showcaseItem?.imageUrl, "Image")}`} alt="Landing Page Showcase Image" />
+                <div class="showcase-info">
                     <h3>{ getValueAfterCheck(showcaseItem?.title, "Title") }</h3>
                     <p>{ getValueAfterCheck(showcaseItem?.description, "Description") }</p>
                     <a href={`/${getValueAfterCheck(showcaseItem?.linkPathname, "Link Pathname")}`}>Learn more</a>
