@@ -25,6 +25,7 @@ export default ((opts?: Options) => {
   Title.css = `
   .title {
     margin: 0;
+    font-size: 2rem;
   }
   `
 

@@ -42,13 +42,10 @@ CultivationDates.css = `
     padding: 0;
 
     p {
+        color: var(--darkgray);
         margin: 0;
         line-height: 1rem;
-        font-size: 0.7rem;
-
-        span {
-            font-weight: bold;
-        }
+        font-size: 0.8rem;
     }
 }
 `

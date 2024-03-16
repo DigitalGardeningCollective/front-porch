@@ -34,6 +34,7 @@ export default (() => {
 
         #first-name {
             margin: 0 .5rem 0 0;
+            font-size: 1rem;
         }
     }
     `

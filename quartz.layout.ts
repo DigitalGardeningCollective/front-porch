@@ -26,11 +26,19 @@ export const noteOrEssayPageLayout: PageLayout = {
           components: [
             Component.Author(),
             Component.Contributions()
-          ] 
+          ],
+          classes: ["top-margin", "responsive"] 
         }),
-        Component.CultivationDates()
       ]
     }),
+    Component.Divider(),
+    Component.Row({
+      hasSpacedBetweenJustification: true,
+      components: [
+        Component.ReadingTime(),
+        Component.CultivationDates()
+      ]
+    })
   ],
   left: [],
   right: [

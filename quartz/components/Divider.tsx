@@ -11,7 +11,8 @@ export default (() => {
     Divider.css = `
     .divider {
         border: 0;
-        border-top: 1px solid var(--lightgray);
+        margin: 1rem 0;
+        border-top: .5px solid var(--lightgray);
     }
     `
   

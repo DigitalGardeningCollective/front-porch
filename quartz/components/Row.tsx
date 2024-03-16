@@ -32,26 +32,16 @@ export default ((opts?: Options) => {
 
   Row.css = `
     .row {
+        width: 100%;
         display: flex;
         flex-direction: row;
         align-items: center;
-        margin-top: .5rem;
     }
     .justify-flex-start {
         justify-content: flex-start;
     }
-    .justify-space-between {        
-        @media only screen and (min-width: 768px) {
-          flex-direction: row;
-          justify-content: space-between;
-        }
-
-        @media only screen and (max-width: 767px) {
-          flex-direction: column;
-          gap: 1rem;
-          justify-content: flex-start;
-          align-items: flex-start;
-        }
+    .justify-space-between {
+        justify-content: space-between;  
     }
     .align-center {
       @media only screen and (min-width: 768px) {

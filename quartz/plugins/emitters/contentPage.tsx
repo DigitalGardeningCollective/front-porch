@@ -27,6 +27,7 @@ import RSSConstructor from "../../components/RSS"
 import SocialIconsConstructor from "../../components/SocialIcons"
 import ContributionsConstructor from "../../components/Contributions"
 import AuthorImageConstructor from "../../components/AuthorImage"
+import ReadingTimeConstructor from "../../components/ReadingTime"
 import { pageResources, renderPage } from "../../components/renderPage"
 import { FullPageLayout } from "../../cfg"
 import { Argv } from "../../util/ctx"
@@ -110,6 +111,7 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
   const SocialIcons = SocialIconsConstructor()
   const Contributions = ContributionsConstructor()
   const AuthorImage = AuthorImageConstructor()
+  const ReadingTime = ReadingTimeConstructor()
 
   return {
     name: "ContentPage",
@@ -118,7 +120,7 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
           Head, Header, Body, ...header, ...beforeBody, pageBody, ...left, ...right, Footer, 
           Landing, ShowcaseItem,
           Garden, Card, RecentlyPublished,
-          GrowthStage, Row, Author, CultivationDates, Contributions,
+          GrowthStage, Row, Author, CultivationDates, Contributions, ReadingTime,
           Team, ToolsOrTech, Role, Duration, Grid, Divider,
           Search, DarkMode, RSS, SocialIcons,
           AuthorImage
