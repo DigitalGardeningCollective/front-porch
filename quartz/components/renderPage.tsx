@@ -224,7 +224,7 @@ export function renderPage(
         Content,
         AuthorImage
       ],
-      classes: ["article-and-author-img"] 
+      classes: ["article-and-author-img", "responsive"] 
     }
   )
 
