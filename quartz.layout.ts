@@ -38,7 +38,8 @@ export const contributionsEnabledGrowthPiecePageLayout: PageLayout = {
         Component.ReadingTime(),
         Component.CultivationDates()
       ]
-    })
+    }),
+    Component.CoverImage()
   ],
   left: [],
   right: [
@@ -55,6 +56,7 @@ export const contributionsDisabledGrowthPiecePageLayout: PageLayout = {
     Component.Subtitle(),
     Component.ContentMeta(),
     Component.TagList(),
+    Component.CoverImage()
   ],
   left: [],
   right: [
@@ -66,6 +68,7 @@ export const contributionsDisabledGrowthPiecePageLayout: PageLayout = {
 
 export const portfolioItemPageLayout: PageLayout = {
   beforeBody: [
+    Component.CoverImage(),
     Component.Title(),
     Component.Subtitle(),
     Component.Divider(),
@@ -104,6 +107,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Subtitle(),
     Component.ContentMeta(),
     Component.TagList(),
+    Component.CoverImage()
   ],
   left: [
   ],

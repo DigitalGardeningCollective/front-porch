@@ -18,7 +18,7 @@ import DurationConstructor from "../../components/Duration"
 import ToolsOrTechConstructor from "../../components/ToolsOrTech"
 import RowConstructor from "../../components/Row"
 import GridConstructor from "../../components/Grid"
-import AuthorConstructor from "../../components/Author"
+import AuthorImageWithNameConstructor from "../../components/AuthorImageWithName"
 import CultivationDatesConstructor from "../../components/CultivationDates"
 import DividerConstructor from "../../components/Divider"
 import SearchConstructor from "../../components/Search"
@@ -28,6 +28,7 @@ import SocialIconsConstructor from "../../components/SocialIcons"
 import ContributionsConstructor from "../../components/Contributions"
 import AuthorImageConstructor from "../../components/AuthorImage"
 import ReadingTimeConstructor from "../../components/ReadingTime"
+import CoverImageConstructor from "../../components/CoverImage"
 import { pageResources, renderPage } from "../../components/renderPage"
 import { FullPageLayout } from "../../cfg"
 import { Argv } from "../../util/ctx"
@@ -102,7 +103,7 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
   const Duration = DurationConstructor()
   const ToolsOrTech = ToolsOrTechConstructor()
   const Row = RowConstructor()
-  const Author = AuthorConstructor()
+  const AuthorImageWithName = AuthorImageWithNameConstructor()
   const CultivationDates = CultivationDatesConstructor()
   const Grid = GridConstructor()
   const Divider = DividerConstructor()
@@ -113,6 +114,7 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
   const Contributions = ContributionsConstructor()
   const AuthorImage = AuthorImageConstructor()
   const ReadingTime = ReadingTimeConstructor()
+  const CoverImage = CoverImageConstructor()
 
   return {
     name: "ContentPage",
@@ -121,10 +123,10 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
           Head, Header, Body, ...header, ...beforeBody, pageBody, ...left, ...right, Footer, 
           Landing, ShowcaseItem,
           Garden, Card, RecentlyPublished,
-          GrowthStage, Row, Author, CultivationDates, Contributions, ReadingTime,
+          GrowthStage, Row, AuthorImageWithName, CultivationDates, Contributions, ReadingTime,
           Team, ToolsOrTech, Role, Duration, Grid, Divider,
           Search, DarkMode, RSS, SocialIcons,
-          AuthorImage
+          AuthorImage, CoverImage
         ]
     },
     async getDependencyGraph(ctx, content, _resources) {

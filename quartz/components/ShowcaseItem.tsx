@@ -12,7 +12,7 @@ export default ((userOpts?: Options) => {
         if (showcaseItem) {
             return (
                 <div class="showcase-item responsive"> 
-                    <image class="showcase-img" src={`static/landing/${showcaseItem.image}`} alt="Landing Page Showcase Image" />
+                    <image class="showcase-img" src={`static/landing-showcase/${showcaseItem.image}`} alt="Landing Page Showcase Image" />
                     <div class="showcase-info">
                         <h3>{showcaseItem.title}</h3>
                         <p>{showcaseItem.description}</p>

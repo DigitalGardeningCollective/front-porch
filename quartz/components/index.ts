@@ -34,12 +34,13 @@ import Duration from "./Duration"
 import Row from "./Row"
 import Grid from "./Grid"
 import Divider from "./Divider"
-import Author from "./Author"
+import Author from "./AuthorImageWithName"
 import CultivationDates from "./CultivationDates"
 import RSS from "./RSS"
 import SocialIcons from "./SocialIcons"
 import AuthorImage from "./AuthorImage"
 import ReadingTime from "./ReadingTime"
+import CoverImage from "./CoverImage"
 
 export {
   Title,
@@ -83,5 +84,6 @@ export {
   RSS,
   SocialIcons,
   AuthorImage,
-  ReadingTime
+  ReadingTime,
+  CoverImage
 }

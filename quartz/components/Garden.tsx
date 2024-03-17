@@ -72,7 +72,7 @@ export default (() => {
         return (
             <div id="garden">  
                 <div id="garden-header" class="responsive">
-                    <img src={`../static/garden/${gardenAuthorImage}`} alt={`Photo of ${authorName}`} />
+                    <img src={`../static/author-image/${gardenAuthorImage}`} alt={`Photo of ${authorName}`} />
                     <div id="garden-info">
                         <h4>{ title }</h4>
                         <p>{ leadUp } <span>{ topics.slice(0, topics.length - 1).join(', ') }</span>, and <span>{ topics[topics.length - 1] }</span>.</p>
@@ -90,7 +90,7 @@ export default (() => {
                                     description: c.description, 
                                     image: c.image, 
                                     link: c.link,
-                                    imageLocation: "garden"
+                                    imageLocation: "garden-collection"
                                 });
                                 return <CardComponent { ...data } />
                                 }) 
