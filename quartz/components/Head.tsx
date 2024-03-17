@@ -20,7 +20,7 @@ export default (() => {
     const iconPath = joinSegments(baseDir, `static/author-image/${cfg.gardenPageData.gardenAuthorImage}`)
     const coverImage = fileData.frontmatter?.["cover-image"]
     const ogImagePath = `https://${cfg.baseUrl}/static/${coverImage && typeof coverImage == "string" ? 
-                        coverImage :
+                        `item-cover/${coverImage}` :
                         "og-image.png"
                       }`
 
