@@ -1,11 +1,11 @@
 ---
+title: How you can use Obsidian to do X, Y, and Z
+description: Task, Habits, Notes, Reviews, and etc
 tags:
   - obsidian
   - productivity
   - example
-title: How you can use Obsidian to do X, Y, and Z
 growth-stage: evergreen
-description: Task, Habits, Notes, Reviews, and etc
 open-to-contributions: true
 contributors:
   - Ashley

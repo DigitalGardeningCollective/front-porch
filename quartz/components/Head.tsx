@@ -5,7 +5,10 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 
 export default (() => {
   const Head: QuartzComponent = ({ cfg, fileData, externalResources }: QuartzComponentProps) => {
-    const title = fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title
+    const tempTitle = fileData.frontmatter?.["name-to-title"] ? 
+      `${cfg.landingPageData.authorName.split(" ")[0]}'s ${fileData.frontmatter?.title}` : 
+      fileData.frontmatter?.title
+    const title = tempTitle ?? i18n(cfg.locale).propertyDefaults.title
     const description =
       fileData.description?.trim() ?? i18n(cfg.locale).propertyDefaults.description
     const { css, js } = externalResources
