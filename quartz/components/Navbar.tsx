@@ -60,7 +60,7 @@ export default (() => {
                     }
                 </ul>
                 { slug?.startsWith("garden") && 
-                    <ul class="action-menu" id="action-menu">
+                    <ul class="action-menu">
                         <li class="action-menu-item"><a href="/now" class="action-menu-link">Now</a></li>
                         <li class="action-menu-item"><a href="/blogroll" class="action-menu-link">Blogroll</a></li>
                         <li class="action-menu-item">
