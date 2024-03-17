@@ -50,9 +50,9 @@ const config: QuartzConfig = {
       findMeOnCopy: "You can find me on these platforms:",
       gardenAuthorImage: "default-author-image.jpeg",
       socialLinks: {
-        twitter: "https://twitter.com/janedoe",
-        facebook: "https://facebook.com/janedoe",
-        github: "https://github.com/janedoe",
+        twitter: "https://twitter.com/join_the_DGC",
+        facebook: "https://facebook.com/digitalgardeningcollective",
+        github: "https://github.com/DigitalGardeningCollective",
         linkedin: null,
       },
     },

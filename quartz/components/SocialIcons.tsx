@@ -48,7 +48,7 @@ export default ((opts?: Options) => {
     .social-icons {
         display: flex;
         flex-direction: row;
-        gap: .5rem;
+        gap: 1rem;
         align-items: center;
 
         a {
