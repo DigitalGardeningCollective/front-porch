@@ -24,7 +24,7 @@ export const contributionsEnabledGrowthPiecePageLayout: PageLayout = {
         Component.Row({ 
           hasSpacedBetweenJustification: false,
           components: [
-            Component.Author(),
+            Component.AuthorImageWithName(),
             Component.Contributions()
           ],
           classes: ["top-margin", "responsive"] 
