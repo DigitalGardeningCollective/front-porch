@@ -1,4 +1,3 @@
-import { isStringArray } from "../util/list";
 import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
 
 export default (() => {
@@ -9,7 +8,7 @@ export default (() => {
         if (authorImage && firstName) {
             return (
                 <div id="author-div">
-                    <img src={`../../static/${authorImage}`} alt={`Photo of ${authorName}`} />
+                    <img src={`../../static/garden/${authorImage}`} alt={`Photo of ${authorName}`} />
                     <p id="first-name">{ firstName }</p>
                 </div>
             )
