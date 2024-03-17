@@ -71,7 +71,7 @@ export default (() => {
 
         return (
             <div id="garden">  
-                <div id="garden-header">
+                <div id="garden-header" class="responsive">
                     <img src={`../static/${gardenAuthorImageUrl}`} alt={`Photo of ${authorName}`} />
                     <div id="garden-info">
                         <h4>{ title }</h4>

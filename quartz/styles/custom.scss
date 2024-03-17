@@ -26,6 +26,18 @@
     @media only screen and (max-width: 767) {
         flex-direction: column;
 
+        #garden-info {
+            text-align: center;
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            h4 {
+                margin-top: 1rem;
+            }
+        }
+
         .showcase-img {
             flex: 1;
             box-sizing: border-box;
@@ -72,5 +84,13 @@
     }
     @media only screen and (min-width: 768) {
         flex-direction: row;
+
+        #garden-info {
+            margin-left: 15px;
+
+            h4 {
+                margin-top: 0;
+            }
+        }
     }
 }
