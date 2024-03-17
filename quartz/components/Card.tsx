@@ -2,25 +2,24 @@ import { classNames } from "../util/lang"
 import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
 
 interface Options {
-    data: {
-        title: string
-        description: string
-        imageUrl: string
-        link: string
-    } 
+    title: string
+    description: string
+    image: string
+    imageLocation: string
+    link: string
 }
 
 export default ((userOpts?: Options) => {
     function Card({ displayClass }: QuartzComponentProps) {
-        const { data } = {  ...userOpts }
+        const { title, description, image, imageLocation, link } = {  ...userOpts }
 
         return (
             <div class={classNames(displayClass, "card")}> 
-                <image src={`../static/${data?.imageUrl}`} alt="Card Image" />
+                <image src={`../static/${imageLocation}/${image}`} alt="Card Image" />
                 <div>
-                    <h3>{ data?.title }</h3>
-                    <p>{ data?.description }</p>
-                    <a href={`/${data?.link}`}>Browse &rarr;</a>
+                    <h3>{ title }</h3>
+                    <p>{ description }</p>
+                    <a href={`/${link}`}>Browse &rarr;</a>
                 </div>
             </div>
         )                

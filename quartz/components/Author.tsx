@@ -3,13 +3,13 @@ import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
 
 export default (() => {
     function Author({ fileData, cfg, displayClass }: QuartzComponentProps) {                
-        const { landingPageData: { authorImageUrl, authorName } } = cfg;
+        const { landingPageData: { authorImage, authorName } } = cfg;
         const firstName = authorName.split(' ')[0];
         
-        if (authorImageUrl && firstName) {
+        if (authorImage && firstName) {
             return (
                 <div id="author-div">
-                    <img src={`../../static/${authorImageUrl}`} alt={`Photo of ${authorName}`} />
+                    <img src={`../../static/${authorImage}`} alt={`Photo of ${authorName}`} />
                     <p id="first-name">{ firstName }</p>
                 </div>
             )

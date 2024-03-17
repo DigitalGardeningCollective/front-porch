@@ -21,7 +21,7 @@ export type Analytics =
     }
 
 export type ShowcaseItem = {
-  imageUrl: string
+  image: string
   title: string
   description: string
   pathnameOrUrl: string
@@ -30,7 +30,7 @@ export type ShowcaseItem = {
 
 export type LandingPageData = {
   authorName: string
-  authorImageUrl: string
+  authorImage: string
   intro: {
     title: string
     firstLeadUp: string
@@ -47,7 +47,7 @@ export type GardenPageData = {
     topics: string[]
   }
   findMeOnCopy: string
-  gardenAuthorImageUrl: string
+  gardenAuthorImage: string
   socialLinks: {
     twitter: string | null
     facebook: string | null

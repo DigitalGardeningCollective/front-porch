@@ -18,7 +18,7 @@ const config: QuartzConfig = {
     gitHubFrontPorchRepoName: "front-porch",
     landingPageData: {
       authorName: "Jane Doe",
-      authorImageUrl: "default-author-image.jpeg",
+      authorImage: "default-author-image.jpeg",
       intro: {
         title: "Welcome!",
         firstLeadUp: "I'm",
@@ -27,13 +27,13 @@ const config: QuartzConfig = {
       },
       showcaseItems: [
         {
-          imageUrl: "default-landing-item-image.jpg",
+          image: "default-landing-item-image.jpg",
           title: "Example Showcase Item",
           description: "This is an example showcase item",
           pathnameOrUrl: "portfolio",
         },
         {
-          imageUrl: "default-landing-item-image.jpg",
+          image: "default-landing-item-image.jpg",
           title: "External Showcase Item",
           description: "This is an example showcase item with an external link",
           pathnameOrUrl: "https://digitalgardeningcollective.com",
@@ -48,7 +48,7 @@ const config: QuartzConfig = {
         topics: ["topic 1", "topic 2", "topic 3"],
       },
       findMeOnCopy: "You can find me on these platforms:",
-      gardenAuthorImageUrl: "default-author-image.jpeg",
+      gardenAuthorImage: "default-author-image.jpeg",
       socialLinks: {
         twitter: "https://twitter.com/janedoe",
         facebook: "https://facebook.com/janedoe",

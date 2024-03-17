@@ -228,10 +228,6 @@ export function renderPage(
     }
   )
 
-  // console.log("slug -", slug);
-
-  // console.log('header -', header);
-
   const doc = (
     <html lang={lang}>
       <Head {...componentData} />
