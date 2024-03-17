@@ -40,16 +40,8 @@ export default ((opts?: Partial<FolderContentOptions>) => {
       allFiles: allPagesInFolder,
     }
 
-    const content =
-      (tree as Root).children.length === 0
-        ? fileData.description
-        : htmlToJsx(fileData.filePath!, tree)
-
     return (
       <div class={classes}>
-        <article>
-          <p>{content}</p>
-        </article>
         <div class="page-listing">
           {options.showFolderCount && (
             <p>

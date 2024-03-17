@@ -35,7 +35,8 @@ import { FilePath, isRelativeURL, joinSegments, pathToRoot } from "../../util/pa
 import { 
   defaultContentPageLayout, 
   sharedPageComponents, 
-  noteOrEssayPageLayout, 
+  contributionsEnabledGrowthPiecePageLayout,
+  contributionsDisabledGrowthPiecePageLayout, 
   portfolioItemPageLayout,
   aboutPageLayout
 } from "../../../quartz.layout"
@@ -166,7 +167,11 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
 
         let newOpts = null
         if (slug.includes("/essays/") || slug.includes("/notes/")) {
-          newOpts = { ...opts, ...noteOrEssayPageLayout }
+          if (componentData.fileData.frontmatter?.["contributions-enabled"]) {
+            newOpts = { ...opts, ...contributionsEnabledGrowthPiecePageLayout }
+          } else {
+            newOpts = { ...opts, ...contributionsDisabledGrowthPiecePageLayout }
+          }
         } else if (slug.includes("portfolio/")) {
           newOpts = { ...opts, ...portfolioItemPageLayout }
         } else if (slug.includes("about")) {

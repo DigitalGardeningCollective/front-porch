@@ -6,7 +6,8 @@ tags:
   - productivity
   - example
 growth-stage: evergreen
-open-to-contributions: true
+contributions-enabled: true
+total-contributions: 2
 contributors:
   - Ashley
   - Ben

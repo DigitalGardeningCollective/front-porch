@@ -4,15 +4,19 @@ import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
 export default (() => {
     function Contributions({ fileData, cfg }: QuartzComponentProps) {        
         const { githubUsername, gitHubFrontPorchRepoName } = cfg;
-        const openToContributions = fileData.frontmatter?.["open-to-contributions"];
+        const contributionsEnabled = fileData.frontmatter?.["contributions-enabled"];
+        const totalContributions = fileData.frontmatter?.["total-contributions"];
         const contributors = fileData.frontmatter?.contributors;
         const contributorLinks = fileData.frontmatter?.["contributor-links"];
-        if (openToContributions && typeof openToContributions == "boolean") {
+        if (contributionsEnabled && typeof contributionsEnabled == "boolean") {
             return (
                 <div id="contributions-div">
                     { contributors && isStringArray(contributors) && isStringArray(contributorLinks) && contributors.length === contributorLinks.length &&
                         <p id="contributors" class="text-padding">
-                            <span>{ contributors.length } contributions</span> by{" "}
+                            { totalContributions && typeof totalContributions === "number" &&
+                                <span>{ totalContributions } contributions</span> 
+                            }
+                            {" "}by{" "}
                             <span>
                                 {contributors.map((c, index) => (
                                     <>
@@ -43,11 +47,10 @@ export default (() => {
         #contributors {
             border: 1px solid var(--dark);
             margin: 0 1rem 0 0;
+            font-size: .8rem;
+            font-weight: 600;
 
             span {
-                font-size: .8rem;
-                font-weight: 600;
-
                 a {
                     text-decoration: none;                
                 }

@@ -12,7 +12,7 @@ export const sharedPageComponents: SharedLayout = {
   }),
 }
 
-export const noteOrEssayPageLayout: PageLayout = {
+export const contributionsEnabledGrowthPiecePageLayout: PageLayout = {
   beforeBody: [
     Component.GrowthStage(),
     Component.Title(),
@@ -39,6 +39,22 @@ export const noteOrEssayPageLayout: PageLayout = {
         Component.CultivationDates()
       ]
     })
+  ],
+  left: [],
+  right: [
+    Component.Graph(),
+    Component.DesktopOnly(Component.TableOfContents()),
+    Component.Backlinks(),
+  ]
+}
+
+export const contributionsDisabledGrowthPiecePageLayout: PageLayout = {
+  beforeBody: [
+    Component.GrowthStage(),
+    Component.Title(),
+    Component.Subtitle(),
+    Component.ContentMeta(),
+    Component.TagList(),
   ],
   left: [],
   right: [
