@@ -8,7 +8,7 @@
 
 ### Step 1 - Fork the Front Porch Repo and use the following format for its name:
 
-<github-username>.github.io
+[github-username].github.io
 
 For me, that was joshwingreene.github.io.
 
