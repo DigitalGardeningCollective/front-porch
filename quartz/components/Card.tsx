@@ -29,8 +29,6 @@ export default ((userOpts?: Options) => {
     .card {
         display: flex;
         flex-direction: column;
-        border: 1px solid var(--gray);
-        border-radius: 5px;
         
         img {
             border-top-left-radius: 5px;
@@ -40,7 +38,6 @@ export default ((userOpts?: Options) => {
             display: flex;
             width: 100%;
             height: 130px;
-            object-fit: cover;
             margin: 0;
         }
 
@@ -48,6 +45,12 @@ export default ((userOpts?: Options) => {
             display: flex;
             flex-direction: column;
             padding: 1rem;
+            border: 1px solid var(--gray);
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-top-style: none;
 
             h3 {
                 margin-top: 0rem;
