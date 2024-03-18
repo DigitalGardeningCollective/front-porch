@@ -8,6 +8,7 @@
 
 ### Step 1 - Fork the Front Porch Repo and use the following format for its name:
 
+
 [github-username].github.io
 
 For me, that was joshwingreene.github.io.
@@ -41,6 +42,7 @@ ex. Copyright (c) 2024 Jane Doe
 ### Step 7 - Follow the following steps from Quartz to host your front porch on github
 
 > 1. Head to “Settings” tab of your forked repository and in the sidebar, click “Pages”. Under “Source”, select “GitHub Actions”.
+
 > 2. Commit these changes by doing `npx quartz sync`. This should deploy your site to <github-username>.github.io/<repository-name>.
 
 Whenever you want to update your site, you just need to run `npx quartz sync` after saving your changes.
