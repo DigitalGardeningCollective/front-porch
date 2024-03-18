@@ -22,7 +22,7 @@ For reference, I have a folder called "My Digital Garden" and I have the followi
 - Publisher
 - Workbench
 
-I cloned my fork repo into the "Publisher" folder.
+I cloned my forked repo into the "Publisher" folder.
 
 ### Step 3 - Use the terminal in order to navigate to your front porch folder and then run `npm install` in order to install all of the necessary packages. The dependencies of Front Porch v1.0.0 is consistent with the dependencies that Quartz v4.2.3 relies on.
 
