@@ -58,10 +58,10 @@ const config: QuartzConfig = {
       },
     },
     enableFooter: false,
-    // ** Only edit if you know what you are doing **
+    // ** Refer to Quartz's Configuration Documentation: https://quartz.jzhao.xyz/configuration#general-configuration **
     pageTitle: "Front Porch",
     enableSPA: true,
-    enablePopovers: false, // Temporarily disabling until the content inside the popover is responsive
+    enablePopovers: true,
     analytics: {
       provider: "plausible",
     },
