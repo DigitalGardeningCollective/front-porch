@@ -1,5 +1,7 @@
 MIT License
 
+Copyright (c) 2024 Digital Gardening Collective, LLC
+
 Copyright (c) 2021 jackyzha0
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
