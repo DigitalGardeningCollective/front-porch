@@ -20,13 +20,21 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
   const options: ContentMetaOptions = { ...defaultOptions, ...opts }
 
   function ContentMetadata({ cfg, fileData, displayClass }: QuartzComponentProps) {
+    const growthStage = fileData.frontmatter?.["growth-stage"]
+    const hasGrowthStage = growthStage && typeof growthStage === "string"
     const text = fileData.text
 
     if (text) {
       const segments: string[] = []
 
       if (fileData.dates) {
-        segments.push(formatDate(fileData.dates.published!, cfg.locale))
+        if (hasGrowthStage) {
+          segments.push(`Published on 
+            ${formatDate(fileData.dates.published!, cfg.locale)}, 
+            Last Tended on ${formatDate(fileData.dates.modified, cfg.locale)}`)
+        } else {
+          segments.push(formatDate(fileData.dates.published!, cfg.locale))
+        }
       }
 
       // Display reading time if enabled

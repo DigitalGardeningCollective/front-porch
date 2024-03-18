@@ -18,18 +18,30 @@ import DurationConstructor from "../../components/Duration"
 import ToolsOrTechConstructor from "../../components/ToolsOrTech"
 import RowConstructor from "../../components/Row"
 import GridConstructor from "../../components/Grid"
-import AuthorConstructor from "../../components/Author"
-import CultivationDatesConstructor from "../../components/CultivationDates"
+import AuthorImageWithNameConstructor from "../../components/AuthorImageWithName"
+import DatesConstructor from "../../components/Dates"
 import DividerConstructor from "../../components/Divider"
 import SearchConstructor from "../../components/Search"
 import DarkModeConstructor from "../../components/Darkmode"
 import RSSConstructor from "../../components/RSS"
 import SocialIconsConstructor from "../../components/SocialIcons"
+import ContributionsConstructor from "../../components/Contributions"
+import AuthorImageConstructor from "../../components/AuthorImage"
+import ReadingTimeConstructor from "../../components/ReadingTime"
+import CoverImageConstructor from "../../components/CoverImage"
+import TagListConstructor from "../../components/TagList"
 import { pageResources, renderPage } from "../../components/renderPage"
 import { FullPageLayout } from "../../cfg"
 import { Argv } from "../../util/ctx"
 import { FilePath, isRelativeURL, joinSegments, pathToRoot } from "../../util/path"
-import { defaultContentPageLayout, sharedPageComponents, noteOrEssayPageLayout, portfolioItemPageLayout } from "../../../quartz.layout"
+import { 
+  defaultContentPageLayout, 
+  sharedPageComponents, 
+  contributionsEnabledGrowthPiecePageLayout,
+  contributionsDisabledGrowthPiecePageLayout, 
+  portfolioItemPageLayout,
+  aboutPageLayout
+} from "../../../quartz.layout"
 import { Content } from "../../components"
 import chalk from "chalk"
 import { write } from "./helpers"
@@ -92,14 +104,19 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
   const Duration = DurationConstructor()
   const ToolsOrTech = ToolsOrTechConstructor()
   const Row = RowConstructor()
-  const Author = AuthorConstructor()
-  const CultivationDates = CultivationDatesConstructor()
+  const AuthorImageWithName = AuthorImageWithNameConstructor()
+  const Dates = DatesConstructor()
   const Grid = GridConstructor()
   const Divider = DividerConstructor()
   const Search = SearchConstructor()
   const DarkMode = DarkModeConstructor()
   const RSS = RSSConstructor()
   const SocialIcons = SocialIconsConstructor()
+  const Contributions = ContributionsConstructor()
+  const AuthorImage = AuthorImageConstructor()
+  const ReadingTime = ReadingTimeConstructor()
+  const CoverImage = CoverImageConstructor()
+  const TagList = TagListConstructor()
 
   return {
     name: "ContentPage",
@@ -108,9 +125,10 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
           Head, Header, Body, ...header, ...beforeBody, pageBody, ...left, ...right, Footer, 
           Landing, ShowcaseItem,
           Garden, Card, RecentlyPublished,
-          GrowthStage, Row, Author, CultivationDates,
+          GrowthStage, Row, AuthorImageWithName, Dates, Contributions, ReadingTime,
           Team, ToolsOrTech, Role, Duration, Grid, Divider,
-          Search, DarkMode, RSS, SocialIcons
+          Search, DarkMode, RSS, SocialIcons,
+          AuthorImage, CoverImage, TagList
         ]
     },
     async getDependencyGraph(ctx, content, _resources) {
@@ -153,9 +171,15 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
 
         let newOpts = null
         if (slug.includes("/essays/") || slug.includes("/notes/")) {
-          newOpts = { ...opts, ...noteOrEssayPageLayout }
+          if (componentData.fileData.frontmatter?.["contributions-enabled"]) {
+            newOpts = { ...opts, ...contributionsEnabledGrowthPiecePageLayout }
+          } else {
+            newOpts = { ...opts, ...contributionsDisabledGrowthPiecePageLayout }
+          }
         } else if (slug.includes("portfolio/")) {
           newOpts = { ...opts, ...portfolioItemPageLayout }
+        } else if (slug.includes("about")) {
+          newOpts = { ...opts, ...aboutPageLayout }
         }
 
         const content = renderPage(cfg, slug, componentData, newOpts ?? opts, externalResources)

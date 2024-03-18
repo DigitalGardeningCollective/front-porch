@@ -12,26 +12,58 @@ export const sharedPageComponents: SharedLayout = {
   }),
 }
 
-export const noteOrEssayPageLayout: PageLayout = {
+export const contributionsEnabledGrowthPiecePageLayout: PageLayout = {
   beforeBody: [
     Component.GrowthStage(),
     Component.Title(),
     Component.Subtitle(),
-    // Component.ContentMeta(),
     Component.TagList(),
     Component.Row({ 
-      isSpacedBetween: true, 
+      hasSpacedBetweenJustification: true,
       components: [
         Component.Row({ 
-          isSpacedBetween: false, 
+          hasSpacedBetweenJustification: false,
           components: [
-            Component.Author(),
+            Component.AuthorImageWithName(),
             Component.Contributions()
-          ] 
+          ],
+          classes: ["full-top-margin", "responsive"] 
         }),
-        Component.CultivationDates()
       ]
     }),
+    Component.Divider(),
+    Component.Row({
+      hasSpacedBetweenJustification: true,
+      components: [
+        Component.ReadingTime(),
+        Component.Dates()
+      ]
+    }),
+    Component.CoverImage()
+  ],
+  left: [],
+  right: [
+    Component.Graph(),
+    Component.DesktopOnly(Component.TableOfContents()),
+    Component.Backlinks(),
+  ]
+}
+
+export const contributionsDisabledGrowthPiecePageLayout: PageLayout = {
+  beforeBody: [
+    Component.GrowthStage(),
+    Component.Title(),
+    Component.Subtitle(),
+    Component.ReadingTime(),
+    Component.Row({
+      hasSpacedBetweenJustification: true,
+      components: [
+        Component.TagList({ removeTopMargin: true }),
+        Component.Dates()
+      ],
+      classes: ["half-top-margin"]
+    }),
+    Component.CoverImage()
   ],
   left: [],
   right: [
@@ -43,6 +75,7 @@ export const noteOrEssayPageLayout: PageLayout = {
 
 export const portfolioItemPageLayout: PageLayout = {
   beforeBody: [
+    Component.CoverImage(),
     Component.Title(),
     Component.Subtitle(),
     Component.Divider(),
@@ -65,14 +98,30 @@ export const portfolioItemPageLayout: PageLayout = {
 
 }
 
+export const aboutPageLayout: PageLayout = {
+  beforeBody: [
+    Component.Title({ useConfig: true }),
+    Component.Subtitle({ useConfig: true }),
+  ],
+  left: [],
+  right: [],
+}
+
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
     Component.Title(),
     Component.Subtitle(),
-    Component.ContentMeta(),
-    Component.Contributions(),
-    Component.TagList(),
+    Component.ReadingTime(),
+    Component.Row({
+      hasSpacedBetweenJustification: true,
+      components: [
+        Component.TagList({ removeTopMargin: true }),
+        Component.Dates()
+      ],
+      classes: ["half-top-margin"]
+    }),
+    Component.CoverImage()
   ],
   left: [
   ],

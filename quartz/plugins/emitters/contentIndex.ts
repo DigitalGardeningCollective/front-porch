@@ -75,15 +75,17 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, limit?: nu
     .slice(0, limit ?? idx.size)
     .join("")
 
+  const authorNameAndPageTitle = `${cfg.landingPageData.authorName}'s ${cfg.pageTitle}`
+
   return `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
     <channel>
-      <title>${escapeHTML(cfg.pageTitle)}</title>
+      <title>${escapeHTML(authorNameAndPageTitle)}</title>
       <link>https://${base}</link>
       <description>${!!limit ? i18n(cfg.locale).pages.rss.lastFewNotes({ count: limit }) : i18n(cfg.locale).pages.rss.recentNotes} on ${escapeHTML(
-        cfg.pageTitle,
+        authorNameAndPageTitle,
       )}</description>
-      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <generator>Front Porch -- front-porch.digitalgardeningcollective.com</generator>
       ${items}
     </channel>
   </rss>`
@@ -119,7 +121,7 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
       const linkIndex: ContentIndex = new Map()
       for (const [tree, file] of content) {
         const slug = file.data.slug!
-        const date = getDate(ctx.cfg.configuration, file.data) ?? new Date()
+        const date = file.data.dates?.published!
         if (opts?.includeEmptyFiles || (file.data.text && file.data.text !== "")) {
           linkIndex.set(slug, {
             title: file.data.frontmatter?.title!,

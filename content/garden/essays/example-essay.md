@@ -1,19 +1,22 @@
 ---
+title: How you can use Obsidian to do X, Y, and Z
+description: Task, Habits, Notes, Reviews, and etc
 tags:
   - obsidian
   - productivity
   - example
-title: How you can use Obsidian to do X, Y, and Z
-growthStage: evergreen
-subtitle: Task, Habits, Notes, Reviews, and etc
-openToContributions: true
+growth-stage: evergreen
+contributions-enabled: true
+total-contributions: 2
 contributors:
   - Ashley
   - Ben
-contributorLinks:
+contributor-links:
   - https://github.com/ashleycrouch
   - https://github.com/bencovington-game
 date: 2024-03-06 8:30 pm
+cover-image: example-essay-image.jpg
+cover-image-alt-text: Field of Trees
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 

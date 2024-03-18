@@ -21,15 +21,16 @@ export type Analytics =
     }
 
 export type ShowcaseItem = {
-  imageUrl: string
+  image: string
   title: string
   description: string
-  linkPathname: string
+  pathnameOrUrl: string
+  hasExternalLink?: boolean
 }
 
 export type LandingPageData = {
   authorName: string
-  authorImageUrl: string
+  authorImage: string
   intro: {
     title: string
     firstLeadUp: string
@@ -46,7 +47,7 @@ export type GardenPageData = {
     topics: string[]
   }
   findMeOnCopy: string
-  gardenAuthorImageUrl: string
+  gardenAuthorImage: string
   socialLinks: {
     twitter: string | null
     facebook: string | null
@@ -60,6 +61,8 @@ export interface GlobalConfiguration {
   landingPageData: LandingPageData
   gardenPageData: GardenPageData
   enableFooter: boolean
+  githubUsername: string
+  gitHubFrontPorchRepoName: string
   // ** Page Title */
   pageTitle: string
   /** Whether to enable single-page-app style rendering. this prevents flashes of unstyled content and improves smoothness of Quartz */

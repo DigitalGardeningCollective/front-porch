@@ -2,6 +2,8 @@ import { render } from "preact-render-to-string"
 import { QuartzComponent, QuartzComponentProps } from "./types"
 import HeaderConstructor from "./Header"
 import BodyConstructor from "./Body"
+import RowConstructor from "./Row"
+import AuthorImageConstructor from "./AuthorImage"
 import { JSResourceToScriptElement, StaticResources } from "../util/resources"
 import { clone, FullSlug, RelativeURL, joinSegments, normalizeHastElement } from "../util/path"
 import { visit } from "unist-util-visit"
@@ -214,10 +216,17 @@ export function renderPage(
   const lang = componentData.frontmatter?.lang ?? cfg.locale?.split("-")[0] ?? "en"
   const LandingComponent = Landing()
   const GardenComponent = Garden()
-
-  console.log("slug -", slug);
-
-  // console.log('header -', header);
+  const AuthorImage = AuthorImageConstructor()
+  const RowComponent = RowConstructor(
+    { hasSpacedBetweenJustification: true,
+      hasFlexStartAlignment: true, 
+      components: [
+        Content,
+        AuthorImage
+      ],
+      classes: ["article-and-author-img", "responsive"] 
+    }
+  )
 
   const doc = (
     <html lang={lang}>
@@ -230,9 +239,10 @@ export function renderPage(
           </Header>
           <div id="quartz-root" class="page">
             <Body {...componentData}>
-              {LeftComponent}
+              { (slug !== "index" && slug !== "garden/index") ? LeftComponent : <div></div>}
               <div class="center">
-                { slug !== "index" && slug !== "garden/index" && (<div class="popover-hint">
+                { slug !== "index" && slug !== "garden/index" && (
+                  <div class="popover-hint">
                     {beforeBody.map((BodyComponent) => (
                       <BodyComponent {...componentData} />
                     ))}
@@ -240,9 +250,13 @@ export function renderPage(
                 )}
                 { slug === "index" && <LandingComponent {...componentData} /> }
                 { slug === "garden/index" && <GardenComponent {...componentData} /> }
-                { (slug !== "index" && slug !== "garden/index") && <Content {...componentData} /> }
+                { (slug !== "index" && slug !== "garden/index" && slug !== "about") && <Content {...componentData} /> }
+                { slug === "about" && (
+                    <RowComponent {...componentData} />
+                  )
+                }
               </div>
-              { slug !== "index" ? RightComponent : <div></div> }
+              { (slug !== "index" && slug !== "garden/index") ? RightComponent : <div></div> }
             </Body>
             <Footer {...componentData} />
           </div>

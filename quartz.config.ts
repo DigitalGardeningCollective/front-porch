@@ -8,10 +8,17 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
+    /**
+     * Front Porch 1.0 Configuration
+     *
+     * See https://github.com/DigitalGardeningCollective/front-porch/blob/main/README.md for more information.
+     */
     // Add your data here
+    githubUsername: "DigitalGardeningCollective",
+    gitHubFrontPorchRepoName: "front-porch",
     landingPageData: {
       authorName: "Jane Doe",
-      authorImageUrl: "default-author-image.jpeg",
+      authorImage: "default-author-image.jpeg",
       intro: {
         title: "Welcome!",
         firstLeadUp: "I'm",
@@ -20,16 +27,17 @@ const config: QuartzConfig = {
       },
       showcaseItems: [
         {
-          imageUrl: "default-landing-item-image.jpg",
+          image: "default-landing-item-image.jpg",
           title: "Example Showcase Item",
           description: "This is an example showcase item",
-          linkPathname: "example",
+          pathnameOrUrl: "portfolio",
         },
         {
-          imageUrl: "default-landing-item-image.jpg",
-          title: "Example Showcase Item",
-          description: "This is an example showcase item",
-          linkPathname: "example",
+          image: "default-landing-item-image.jpg",
+          title: "External Showcase Item",
+          description: "This is an example showcase item with an external link",
+          pathnameOrUrl: "https://digitalgardeningcollective.com",
+          hasExternalLink: true,
         }
       ],
     },
@@ -40,11 +48,11 @@ const config: QuartzConfig = {
         topics: ["topic 1", "topic 2", "topic 3"],
       },
       findMeOnCopy: "You can find me on these platforms:",
-      gardenAuthorImageUrl: "default-author-image.jpeg",
+      gardenAuthorImage: "default-author-image.jpeg",
       socialLinks: {
-        twitter: "https://twitter.com/janedoe",
-        facebook: "https://facebook.com/janedoe",
-        github: "https://github.com/janedoe",
+        twitter: "https://twitter.com/join_the_DGC",
+        facebook: "https://facebook.com/digitalgardeningcollective",
+        github: "https://github.com/DigitalGardeningCollective",
         linkedin: null,
       },
     },
@@ -57,7 +65,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
+    baseUrl: "front-porch.digitalgardeningcollective.com",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
@@ -121,6 +129,7 @@ const config: QuartzConfig = {
       Plugin.ContentIndex({
         enableSiteMap: true,
         enableRSS: true,
+        includeEmptyFiles: false
       }),
       Plugin.Assets(),
       Plugin.Static(),

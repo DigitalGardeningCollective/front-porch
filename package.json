@@ -1,15 +1,16 @@
 {
-  "name": "@jackyzha0/quartz",
-  "description": "🌱 publish your digital garden and notes as a website",
+  "name": "@digitalgardeningcollective/front-porch",
+  "description": "Your front porch on the web. It serves as your website, digital garden, portfolio, 'now' log, and blogroll.",
   "private": true,
-  "version": "4.2.3",
+  "version": "1.0.0",
+  "quartz-version": "4.2.3",
   "type": "module",
-  "author": "jackyzha0 <j.zhao2k19@gmail.com>",
+  "author": "joshwingreene <joshwin@dgc.rocks>",
   "license": "MIT",
-  "homepage": "https://quartz.jzhao.xyz",
+  "homepage": "https://digitalgardeningcollective.com/front-porch",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jackyzha0/quartz.git"
+    "url": "https://github.com/DigitalGardeningCollective/front-porch.git"
   },
   "scripts": {
     "docs": "npx quartz build --serve -d docs",

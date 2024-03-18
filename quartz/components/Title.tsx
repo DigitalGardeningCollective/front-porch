@@ -1,19 +1,33 @@
 import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { classNames } from "../util/lang"
 
-function Title({ fileData, displayClass }: QuartzComponentProps) {
-  const title = fileData.frontmatter?.title
+interface Options {
+  useConfig?: boolean
+}
 
-  if (title) {
-    return <h1 class={classNames(displayClass, "title")}>{title}</h1>
-  } else {
-    return null
+export default ((opts?: Options) => {
+  function Title({ fileData, displayClass, cfg }: QuartzComponentProps) {
+    const options = opts;
+    let title = undefined;
+
+    if (options && options.useConfig) {
+      title = cfg.landingPageData.authorName;
+    } else {
+      title = fileData.frontmatter?.title;
+    }
+
+    if (title) {
+      return <h1 class={classNames(displayClass, "title")}>{title}</h1>
+    } else {
+      return null
+    }
   }
-}
-Title.css = `
-.title {
-  margin: .5rem 0 0 0;
-}
-`
+  Title.css = `
+  .title {
+    margin: 0;
+    font-size: 2rem;
+  }
+  `
 
-export default (() => Title) satisfies QuartzComponentConstructor
+  return Title
+}) satisfies QuartzComponentConstructor

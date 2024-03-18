@@ -1,3 +1,100 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+
+.article-and-author-img {
+    article {
+        flex: 2;
+    }
+
+    img {
+        @media only screen and (min-width: 768px) {
+          flex: 1;
+        }
+  
+        @media only screen and (max-width: 767px) {
+          width: 100%;
+        }
+    }
+}
+
+.full-top-margin {
+    margin-top: 1rem;
+}
+
+.half-top-margin {
+    margin-top: 0.5rem;
+}
+
+.responsive {
+    @media only screen and (max-width: 767) {
+        flex-direction: column;
+
+        #garden-info {
+            text-align: center;
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            h4 {
+                margin-top: 1rem;
+            }
+        }
+
+        .showcase-img {
+            flex: 1;
+            box-sizing: border-box;
+            width: 100%;
+            margin-bottom: 0;
+        }
+
+        .showcase-info {
+            padding: 1rem;
+
+            h3, a {
+                margin: 0;
+            }
+
+            p {
+                margin: 1rem 0;
+            }
+        }
+
+        #contributions-div {
+            margin-top: 1rem;
+            width: 100%;
+
+            @media only screen and (max-width: 415) {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+
+                #contributors {
+                    margin-right: 0;
+                    width: 95%;
+                }
+
+                #cta {
+                    width: 100%;
+
+                    p {
+                        width: 95%;
+                    }
+                }
+            }
+
+        }
+    }
+    @media only screen and (min-width: 768) {
+        flex-direction: row;
+
+        #garden-info {
+            margin-left: 15px;
+
+            h4 {
+                margin-top: 0;
+            }
+        }
+    }
+}

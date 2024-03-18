@@ -1,4 +1,4 @@
 ---
 title: Blogroll
-subtitle: My favorite digital gardens and blogs
+description: My favorite digital gardens and blogs
 ---

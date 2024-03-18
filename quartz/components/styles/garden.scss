@@ -13,18 +13,17 @@
 #garden-header {
     margin-top: 1rem;
     display: flex;
-    flex-direction: row;
     align-items: center;
     border: 1px solid var(--gray);
     border-radius: 5px;
-    padding-left: 1rem;
+    padding: 1rem;
 
     img {
         width: 150px;
         height: 150px;
         border-radius: 50%;
-        border: 8px solid var(--gray);
-        margin: 1rem 0;
+        border: 8px solid var(--secondary);
+        margin: 0;
     }
 }
 
@@ -66,13 +65,7 @@
     }
 }
 
-#garden-info {
-    margin-left: 15px;
-    
-    h4 {
-        margin-top: 0;
-    }
-
+#garden-info {    
     h4, p {
         color: var(--dark)
     }

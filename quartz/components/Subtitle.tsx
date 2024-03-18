@@ -1,14 +1,27 @@
 import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { classNames } from "../util/lang"
+import { getWhatIDoStr } from "../util/author";
 
-export default (() => {
+interface Options {
+  useConfig?: boolean
+}
+
+export default ((opts?: Options) => {
   function Subtitle({ fileData, cfg, displayClass }: QuartzComponentProps) {        
-    const title = fileData.frontmatter?.subtitle
-      if (title) {
-        return <h3 class={classNames(displayClass, "subtitle")}>{title}</h3>
-      } else {
-        return null
-      }
+    const options = opts;
+    let subtitle = undefined;
+
+    if (options && options.useConfig) {
+      subtitle = getWhatIDoStr(cfg.landingPageData.intro.whatIDo);
+    } else {
+      subtitle = fileData.frontmatter?.description;
+    }
+    
+    if (subtitle) {
+      return <h3 class={classNames(displayClass, "subtitle")}>{subtitle}</h3>
+    } else {
+      return null
+    }
   }
   
   Subtitle.css = `

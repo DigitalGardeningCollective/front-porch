@@ -185,6 +185,12 @@ a {
     }
   }
 
+  & .center {
+    @media only screen and (min-width: $fullPageWidth) {
+      margin-top: 2rem;      
+    }
+  }
+
   & .center,
   & footer {
     margin-left: auto;

@@ -1,4 +1,5 @@
 ---
-title: Welcome to Front Porch (a fork of Quartz)
+title: Front Porch
+name-to-title: true
 ---
 

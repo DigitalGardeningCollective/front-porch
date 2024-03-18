@@ -6,7 +6,7 @@ import { defaultOptions } from "./Graph"
 type CollectionData = {
     title: string
     description: string
-    imageUrl: string
+    image: string
     link: string
 }
 
@@ -31,7 +31,7 @@ export default (() => {
             title,
             whatIWriteAbout: { leadUp, topics },
             findMeOnCopy,
-            gardenAuthorImageUrl,
+            gardenAuthorImage,
             socialLinks: { twitter, facebook, github, linkedin },
          } = gardenPageData;
 
@@ -46,33 +46,33 @@ export default (() => {
              {
                  title: 'Notes',
                  description: 'Atomic notes, i.e. single ideas',
-                 imageUrl: 'garden/default-note-image.jpg',
+                 image: 'default-note-image.jpg',
                  link: 'garden/notes'
              },
              {
                  title: 'Essays',
                  description: 'Long-form narratives and opinion pieces',
-                 imageUrl: 'garden/default-essay-image.jpg',
+                 image: 'default-essay-image.jpg',
                  link: 'garden/essays'
              },
              {
                  title: 'MOCs',
                  description: 'MOCs (Maps of Content) on various topics',
-                 imageUrl: 'garden/default-moc-image.jpg',
+                 image: 'default-moc-image.jpg',
                  link: 'garden/mocs'
              },
              {
                  title: 'Contributions',
                  description: 'My contributions to pieces authored by others',
-                 imageUrl: 'garden/default-contribution-image.jpg',
+                 image: 'default-contribution-image.jpg',
                  link: 'garden/contributions'
              }
         ]
 
         return (
             <div id="garden">  
-                <div id="garden-header">
-                    <img src={`../static/${gardenAuthorImageUrl}`} alt={`Photo of ${authorName}`} />
+                <div id="garden-header" class="responsive">
+                    <img src={`../static/author-image/${gardenAuthorImage}`} alt={`Photo of ${authorName}`} />
                     <div id="garden-info">
                         <h4>{ title }</h4>
                         <p>{ leadUp } <span>{ topics.slice(0, topics.length - 1).join(', ') }</span>, and <span>{ topics[topics.length - 1] }</span>.</p>
@@ -86,13 +86,11 @@ export default (() => {
                         <div id="garden-collection-list">
                             { collections.map((c: CollectionData) => {
                                 const CardComponent = Component.Card({ 
-                                    data: 
-                                        { 
-                                            title: c.title, 
-                                            description: c.description, 
-                                            imageUrl: c.imageUrl, 
-                                            link: c.link 
-                                        } 
+                                    title: c.title, 
+                                    description: c.description, 
+                                    image: c.image, 
+                                    link: c.link,
+                                    imageLocation: "garden-collection"
                                 });
                                 return <CardComponent { ...data } />
                                 }) 

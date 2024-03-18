@@ -2,19 +2,26 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import { classNames } from "../util/lang"
 
 interface Options {
-  isSpacedBetween: boolean
   components: QuartzComponent[]
+  hasSpacedBetweenJustification: boolean
+  hasFlexStartAlignment?: boolean,
+  classes?: string[]
 }
 
 export default ((opts?: Options) => {
   function Row(componentData: QuartzComponentProps) {
     const { displayClass } = componentData;
-    const isSpacedBetween = opts?.isSpacedBetween ? opts.isSpacedBetween : false;
+    const hasSpacedBetweenJustification = opts?.hasSpacedBetweenJustification ? opts.hasSpacedBetweenJustification : false;
+    const hasFlexStartAlignment = opts?.hasFlexStartAlignment ? opts.hasFlexStartAlignment : false;
     const components = opts?.components;
+    const classes = opts?.classes ?? [];
 
     if (components) {
         return (
-            <div class={`row ${classNames(displayClass, isSpacedBetween ? "space-between" : "flex-start")}`}>
+            <div class={`row ${classes.join(" ")}
+                ${classNames(displayClass, hasSpacedBetweenJustification ? "justify-space-between" : "justify-flex-start")}
+                ${classNames(displayClass, hasFlexStartAlignment ? "align-flex-start" : "align-center")}
+                `}>
               { components.map((Component, i) => <Component {...componentData} key={i} />) }
             </div>
           ) 
@@ -25,28 +32,27 @@ export default ((opts?: Options) => {
 
   Row.css = `
     .row {
-        align-items: center;
-        margin-top: .5rem;
-    }
-    .flex-start {
+        width: 100%;
         display: flex;
         flex-direction: row;
+        align-items: center;
+    }
+    .justify-flex-start {
         justify-content: flex-start;
     }
-    .space-between {
-        display: flex;
-        
-        @media only screen and (min-width: 768px) {
-          flex-direction: row;
-          justify-content: space-between;
-        }
-
-        @media only screen and (max-width: 767px) {
-          flex-direction: column;
-          gap: 1rem;
-          justify-content: flex-start;
-          align-items: flex-start;
-        }
+    .justify-space-between {
+        justify-content: space-between;  
+    }
+    .align-center {
+      @media only screen and (min-width: 768px) {
+        align-items: center;
+      }
+      @media only screen and (max-width: 767px) {
+        align-items: flex-start;
+      }
+    }
+    .align-flex-start {
+        align-items: flex-start;
     }
   `
   return Row

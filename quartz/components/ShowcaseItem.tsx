@@ -9,20 +9,20 @@ export default ((userOpts?: Options) => {
     function ShowcaseItem({ fileData, cfg, displayClass }: QuartzComponentProps) {
         const { showcaseItem } = {  ...userOpts }
 
-        const getValueAfterCheck = (value: string | undefined, valueName: string) => {
-            return value ? value : valueName + " Not Given"
-        }
-
-        return (
-            <div class="showcase-item"> 
-                <image src={`static/${getValueAfterCheck(showcaseItem?.imageUrl, "Image")}`} alt="Landing Page Showcase Image" />
-                <div>
-                    <h3>{ getValueAfterCheck(showcaseItem?.title, "Title") }</h3>
-                    <p>{ getValueAfterCheck(showcaseItem?.description, "Description") }</p>
-                    <a href={`/${getValueAfterCheck(showcaseItem?.linkPathname, "Link Pathname")}`}>Learn more</a>
+        if (showcaseItem) {
+            return (
+                <div class="showcase-item responsive"> 
+                    <image class="showcase-img" src={`static/landing-showcase/${showcaseItem.image}`} alt="Landing Page Showcase Image" />
+                    <div class="showcase-info">
+                        <h3>{showcaseItem.title}</h3>
+                        <p>{showcaseItem.description}</p>
+                        <a target={!showcaseItem.hasExternalLink ? "_self" : "_target"} href={`${!showcaseItem.hasExternalLink ? `/${showcaseItem.pathnameOrUrl}` : `${showcaseItem.pathnameOrUrl}`}`}>Learn more</a>
+                    </div>
                 </div>
-            </div>
-        )                
+            )                
+        } else {
+            return null
+        }      
     }
 
     ShowcaseItem.css = `

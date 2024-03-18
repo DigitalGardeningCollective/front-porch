@@ -33,7 +33,7 @@ nav.navbar a.brand {
 	font-size: 1rem;
 	font-weight: 700;
 	line-height: inherit;
-	color: --var(secondary);
+	color: var(--secondary);
 	text-rendering: optimizeLegibility;
 }
 
@@ -41,7 +41,6 @@ nav.navbar a.brand {
 nav.navbar {
 	width: 100%;
 	height: auto;
-	
 	color: var(--dark);
 	background: var(--light);
 	box-shadow: $box-shadow;
@@ -65,6 +64,7 @@ nav.navbar {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
+		line-height: .8rem;
 
 		.burger {
 			display: flex;
@@ -98,7 +98,6 @@ nav.navbar {
 	}
 
 	.menu {
-		width: 80%;
 		height: 0;
 		overflow: hidden;
 		transition: all 0.5s ease;
@@ -117,7 +116,7 @@ nav.navbar {
 			transition: all 0.35s ease;
 
 			&:hover {
-				color: --var(secondary);
+				color: var(--secondary);
 			}
 		}
 
@@ -151,7 +150,6 @@ nav.navbar {
 	}
 
     .action-menu {
-		width: 50%;
 		height: 0;
 		overflow: hidden;
 		transition: all 0.5s ease;
@@ -165,12 +163,12 @@ nav.navbar {
 			font-size: 1rem;
 			font-weight: 500;
 			line-height: inherit;
-			color: --var(dark);
+			color: var(--dark);
 			text-rendering: optimizeLegibility;
 			transition: all 0.35s ease;
 
 			&:hover {
-				color: --var(secondary);
+				color: var(--secondary);
 			}
 		}
 

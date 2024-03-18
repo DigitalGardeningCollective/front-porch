@@ -39,14 +39,12 @@ export default (() => {
                     <div class="burger" id="burger">
                         <span class="burger-open">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16">
-                                <g fill="#252a32" fill-rule="evenodd">
-                                    <path d="M0 0h24v2H0zM0 7h24v2H0zM0 14h24v2H0z" />
-                                </g>
+                                <path fill="currentColor" d="M0 0h24v2H0zM0 7h24v2H0zM0 14h24v2H0z" />
                             </svg>
                         </span>
                         <span class="burger-close">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
-                                <path fill="#252a32" fill-rule="evenodd" d="M17.778.808l1.414 1.414L11.414 10l7.778 7.778-1.414 1.414L10 11.414l-7.778 7.778-1.414-1.414L8.586 10 .808 2.222 2.222.808 10 8.586 17.778.808z" />
+                                <path fill="currentColor" d="M17.778.808l1.414 1.414L11.414 10l7.778 7.778-1.414 1.414L10 11.414l-7.778 7.778-1.414-1.414L8.586 10 .808 2.222 2.222.808 10 8.586 17.778.808z" />
                             </svg>
                         </span>
                     </div>
@@ -60,7 +58,7 @@ export default (() => {
                     }
                 </ul>
                 { slug?.startsWith("garden") && 
-                    <ul class="action-menu" id="action-menu">
+                    <ul class="action-menu">
                         <li class="action-menu-item"><a href="/now" class="action-menu-link">Now</a></li>
                         <li class="action-menu-item"><a href="/blogroll" class="action-menu-link">Blogroll</a></li>
                         <li class="action-menu-item">
