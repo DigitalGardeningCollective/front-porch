@@ -36,7 +36,7 @@ export const contributionsEnabledGrowthPiecePageLayout: PageLayout = {
       hasSpacedBetweenJustification: true,
       components: [
         Component.ReadingTime(),
-        Component.CultivationDates()
+        Component.Dates()
       ]
     }),
     Component.CoverImage()
@@ -54,8 +54,14 @@ export const contributionsDisabledGrowthPiecePageLayout: PageLayout = {
     Component.GrowthStage(),
     Component.Title(),
     Component.Subtitle(),
-    Component.ContentMeta(),
-    Component.TagList(),
+    Component.ReadingTime(),
+    Component.Row({
+      hasSpacedBetweenJustification: true,
+      components: [
+        Component.TagList({ removeTopMargin: true }),
+        Component.Dates()
+      ]
+    }),
     Component.CoverImage()
   ],
   left: [],
@@ -105,8 +111,14 @@ export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
     Component.Title(),
     Component.Subtitle(),
-    Component.ContentMeta(),
-    Component.TagList(),
+    Component.ReadingTime(),
+    Component.Row({
+      hasSpacedBetweenJustification: true,
+      components: [
+        Component.TagList({ removeTopMargin: true }),
+        Component.Dates()
+      ]
+    }),
     Component.CoverImage()
   ],
   left: [

@@ -35,7 +35,7 @@ import Row from "./Row"
 import Grid from "./Grid"
 import Divider from "./Divider"
 import AuthorImageWithName from "./AuthorImageWithName"
-import CultivationDates from "./CultivationDates"
+import Dates from "./Dates"
 import RSS from "./RSS"
 import SocialIcons from "./SocialIcons"
 import AuthorImage from "./AuthorImage"
@@ -80,7 +80,7 @@ export {
   Grid,
   Divider,
   AuthorImageWithName,
-  CultivationDates,
+  Dates,
   RSS,
   SocialIcons,
   AuthorImage,
