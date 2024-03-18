@@ -9,11 +9,12 @@ import * as Plugin from "./quartz/plugins"
 const config: QuartzConfig = {
   configuration: {
     /**
-     * Front Porch 1.0 Configuration
+     * Front Porch 1.0.0 Configuration
      *
      * See https://github.com/DigitalGardeningCollective/front-porch/blob/main/README.md for more information.
      */
-    // Add your data here
+    frontPorchVersion: "1.0.0",
+    // ** Add your data here **
     githubUsername: "DigitalGardeningCollective",
     gitHubFrontPorchRepoName: "front-porch",
     landingPageData: {
@@ -57,10 +58,10 @@ const config: QuartzConfig = {
       },
     },
     enableFooter: false,
-    // Only edit if you know what you are doing
+    // ** Refer to Quartz's Configuration Documentation: https://quartz.jzhao.xyz/configuration#general-configuration **
     pageTitle: "Front Porch",
     enableSPA: true,
-    enablePopovers: false, // Temporarily disabling until the content inside the popover is responsive
+    enablePopovers: true,
     analytics: {
       provider: "plausible",
     },

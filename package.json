@@ -2,8 +2,7 @@
   "name": "@digitalgardeningcollective/front-porch",
   "description": "Your front porch on the web. It serves as your website, digital garden, portfolio, 'now' log, and blogroll.",
   "private": true,
-  "version": "1.0.0",
-  "quartz-version": "4.2.3",
+  "version": "4.2.3",
   "type": "module",
   "author": "joshwingreene <joshwin@dgc.rocks>",
   "license": "MIT",
@@ -29,7 +28,8 @@
     "digital-garden",
     "markdown",
     "blog",
-    "quartz"
+    "quartz",
+    "front-porch"
   ],
   "bin": {
     "quartz": "./quartz/bootstrap-cli.mjs"
