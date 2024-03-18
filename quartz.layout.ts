@@ -27,7 +27,7 @@ export const contributionsEnabledGrowthPiecePageLayout: PageLayout = {
             Component.AuthorImageWithName(),
             Component.Contributions()
           ],
-          classes: ["top-margin", "responsive"] 
+          classes: ["full-top-margin", "responsive"] 
         }),
       ]
     }),
@@ -60,7 +60,8 @@ export const contributionsDisabledGrowthPiecePageLayout: PageLayout = {
       components: [
         Component.TagList({ removeTopMargin: true }),
         Component.Dates()
-      ]
+      ],
+      classes: ["half-top-margin"]
     }),
     Component.CoverImage()
   ],
@@ -117,7 +118,8 @@ export const defaultContentPageLayout: PageLayout = {
       components: [
         Component.TagList({ removeTopMargin: true }),
         Component.Dates()
-      ]
+      ],
+      classes: ["half-top-margin"]
     }),
     Component.CoverImage()
   ],
