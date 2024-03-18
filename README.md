@@ -26,11 +26,11 @@ I cloned my fork repo into the "Publisher" folder.
 
 ### Step 3 - Use the terminal in order to navigate to your front porch folder and then run `npm install` in order to install all of the necessary packages. The dependencies of Front Porch v1.0.0 is consistent with the dependencies that Quartz v4.2.3 relies on.
 
-**Step 4 Disclaimer:** "I am not a lawyer, and the information provided is not legal advice. Please consult a qualified legal professional for legal advice specific to your situation."
+### Step 4 Disclaimer -  I am not a lawyer, and the information provided is not legal advice. Please consult a qualified legal professional for legal advice specific to your situation.
 
 ### Step 4 - Navigate to the LICENSE.txt file and add a line to the top of the file under "MIT"
 
-Copyright (c) <your name without the carets>
+Copyright (c) [your name without the brackets]
 
 ### Step 5 - Navigate to the quartz.config.ts file and update lines 17 to 59 accordingly
 
