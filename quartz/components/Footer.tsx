@@ -1,6 +1,6 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import style from "./styles/footer.scss"
-import pkg from "../../package.json"
+import { version } from "../../package.json"
 import { i18n } from "../i18n"
 
 interface Options {
@@ -14,8 +14,8 @@ interface InternalLink {
 
 export default ((opts?: Options) => {
   const Footer: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {
-    const frontPorchVersion = pkg["version"]
-    const quartzVersion = pkg["quartz-version"]
+    const frontPorchVersion = cfg.frontPorchVersion
+    const quartzVersion = version
     const year = new Date().getFullYear()
     const links = opts?.links ?? []
     const isFooterEnabled = cfg.enableFooter

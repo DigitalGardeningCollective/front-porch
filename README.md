@@ -30,7 +30,9 @@ I cloned my fork repo into the "Publisher" folder.
 
 ### Step 4 - Navigate to the LICENSE.txt file and add a line to the top of the file under "MIT"
 
-Copyright (c) [your name without the brackets]
+Copyright (c) [year] [your name]
+
+ex. Copyright (c) 2024 Jane Doe
 
 ### Step 5 - Navigate to the quartz.config.ts file and update lines 17 to 59 accordingly
 
